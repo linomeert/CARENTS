@@ -81,11 +81,11 @@ ActiveRecord::Schema.define(version: 2019_08_19_143313) do
     t.boolean "status"
     t.datetime "date"
     t.bigint "inviter_id"
-    t.bigint "receivers_id"
+    t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inviter_id"], name: "index_playdates_on_inviter_id"
-    t.index ["receivers_id"], name: "index_playdates_on_receivers_id"
+    t.index ["receiver_id"], name: "index_playdates_on_receiver_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -113,5 +113,7 @@ ActiveRecord::Schema.define(version: 2019_08_19_143313) do
   add_foreign_key "children", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users", column: "sender_id"
+  add_foreign_key "playdates", "users", column: "inviter_id"
+  add_foreign_key "playdates", "users", column: "receiver_id"
   add_foreign_key "reviews", "playdates"
 end

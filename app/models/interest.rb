@@ -1,5 +1,5 @@
 class Interest < ApplicationRecord
-  belongs_to :child
+  has_and_belongs_to_many :children
 
   validates :title, presence: true
   validates :icon, presence: true

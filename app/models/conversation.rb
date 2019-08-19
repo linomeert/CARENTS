@@ -1,3 +1,3 @@
 class Conversation < ApplicationRecord
-  belongs_to :message
+  has_and_belongs_to_many :users
 end

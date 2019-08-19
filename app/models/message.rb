@@ -1,4 +1,7 @@
 class Message < ApplicationRecord
-  belongs_to :sender
-  belongs_to :conversation
+  belongs_to :user
+
+  has_many :conversations, dependent: :destroy
+
+  validates :content, presence: true
 end

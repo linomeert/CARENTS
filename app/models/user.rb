@@ -11,8 +11,9 @@ class User < ApplicationRecord
   has_many :playdates, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
-  validates :picture, presence: true
   validates :address, presence: true
-  validates :picture, presence: true
+  validates :photo, presence: true
   validates :username, presence: true, uniqueness: true
+
+  mount_uploader :photo, PhotoUploader
 end

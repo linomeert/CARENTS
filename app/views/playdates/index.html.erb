@@ -1,0 +1,83 @@
+<div class="sidenav">
+  <a href="#">My playdate requests</a>
+  <a href="#">My upcoming playdates</a>
+  <a href="#">My pending playdates</a>
+  <a href="#">My past playdates</a>
+</div>
+<div class="main">
+  <div class="container">
+    <div class="contentblok" id="upcoming">
+      <h2>My upcoming playdates</h2>
+      <div class="playdategrid">
+        <% if @playdates_upcoming.empty? %>
+          <p>No upcoming playdates. Find a playdate!</p>
+        <% else %>
+          <% @playdates_upcoming.each do |playdate| %>
+          <% inviter = User.find(playdate.inviter_id) %>
+          <% receiver = User.find(playdate.receivers_id) %>
+            <div class="pl-block">
+              <div class="playcontent">
+                <div class="avatars">
+                  <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
+                  <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
+                </div>
+                <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
+                <p><%= playdate.description %></p>
+              </div>
+              <div class="footerbox">
+                <div class="date">
+                  <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
+                </div>
+                <div class="options">
+
+                  <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
+                     <i class="fas fa-trash-alt"></i>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="contentblok" id="to_accept">
+      <h2>My playdate requests</h2>
+      <div class="playdategrid">
+        <% if @playdates_to_accept.empty? %>
+          <p>No playdate requests yet. No worries, invite someone!</p>
+        <% else %>
+          <% @playdates_to_accept.each do |playdate| %>
+          <% inviter = User.find(playdate.inviter_id) %>
+          <% receiver = User.find(playdate.receivers_id) %>
+            <div class="pl-block">
+              <div class="playcontent">
+                <div class="avatars">
+                  <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
+                  <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
+                </div>
+                <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
+                <p><%= playdate.description %></p>
+              </div>
+              <div class="footerbox">
+                <div class="date">
+                  <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
+                </div>
+                <div class="options">
+
+                  <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
+                     <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                  <i class="fas fa-check"></i>
+                  <i class="fas fa-times"></i>
+
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

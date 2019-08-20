@@ -12,10 +12,21 @@
 
           <div class="userbio">
              <h3><%= user.last_name %> family</h3>
-            <%= user.address %>
-            <br>
-            <%= user.email %>
+             <p><%= user.address %></p>
+            <% if user.children.count == 1 %>
+              <p><%= user.children.count %> child</p>
+            <% else %>
+              <p><%= user.children.count %> children</p>
+            <% end %>
+            <ul>
+              <% user.children.each do |child| %>
 
+                  <% child.conditions.each do |condition| %>
+                    <li><%= condition.name %></li>
+                  <% end %>
+
+              <% end %>
+            </ul>
           </div>
 
         </div>

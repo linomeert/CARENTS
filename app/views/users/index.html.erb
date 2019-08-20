@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="user-container">
+    <h1>Meet Carents in Brussels</h1>
+    <p>Search amongst this list the family you want</p>
+    <div class="cards">
+      <div class="usercards">
+        <% @users.each do |user| %>
+          <h3><%= user.last_name %> family</h3>
+          <div class="card-image" style="background-image:url(<%= cl_image_path( user.photo, :width => 900, :height => 600  , :crop => :thumb, :gravity => :face )  %>)">
+          </div>
+          <div class="userbio">
+            <%= user.address %>
+            <%= user.email %>
+          </div>
+          <%= link_to "profile", user_path(id: user.id) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

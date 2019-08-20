@@ -1,0 +1,29 @@
+
+
+<div class="profile-container">
+  <div class="card-image-profile" style="background-image:url(<%= @user.photo %>)"></div>
+  <div class="container">
+    <h3><%= @user.last_name %> family </h3>
+    <div class="profile-info">
+      <div class="profile-details">
+      <%= @user.address %>
+        <div class="profile-email">
+        <%= @user.email %>
+        </div>
+      </div>
+      <div class="profile-bio">
+        <h3> About the family </h3>
+        <%= @user.biography %>
+         <div class="child-bio">
+          <h3> About the children </h3>
+          <% @user.children.each do |child| %>
+          <%= child.biography %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to "All users", users_path %>

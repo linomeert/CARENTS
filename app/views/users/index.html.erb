@@ -3,6 +3,7 @@
     <h1>Meet Carents in Brussels</h1>
     <p>Search amongst this list the family you want</p>
     <div class="cards">
+
       <% @users.each do |user| %>
       <%= link_to user_path(id: user.id) do %>
         <div class="usercards">
@@ -12,6 +13,7 @@
           <div class="userbio">
              <h3><%= user.last_name %> family</h3>
             <%= user.address %>
+            <br>
             <%= user.email %>
 
           </div>

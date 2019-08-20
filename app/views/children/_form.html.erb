@@ -1,0 +1,10 @@
+<%= simple_form_for [current_user, @child] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :biography %>
+  <%= f.input :age %>
+
+  <%= f.select :conditions, Condition.all.collect { |x| [x.name, x.id]}, {:include_hidden => false}, :multiple => true %>
+  <%= f.select :interests, Interest.all.collect { |x| [x.name, x.id]}, {:include_hidden => false}, :multiple => true %>
+
+  <%= f.submit "Save", class: "btn btn-primary" %>
+<% end %>

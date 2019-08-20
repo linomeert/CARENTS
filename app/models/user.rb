@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :address, presence: true
-  # validates :photo, presence: true
+  validates :photo, presence: true
   validates :username, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader

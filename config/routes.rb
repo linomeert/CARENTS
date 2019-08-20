@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'conversation/show'
   get 'user/index'
   get 'user/show'
   devise_for :users

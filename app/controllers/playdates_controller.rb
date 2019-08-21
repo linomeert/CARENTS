@@ -26,7 +26,6 @@ class PlaydatesController < ApplicationController
     @playdate.receiver_id = params[:user_id]
 
     if @playdate.save
- raise
       redirect_to user_path(current_user)
     else
       render :new

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-
     @current_lat = params[:lat]
     @current_lon = params[:lon]
     if (@current_lat.nil? || @current_lon.nil?)
@@ -16,9 +15,13 @@ class UsersController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
       }
     end
+
   end
 
   def show
     @user = User.find(params[:id])
+
+    @playdates = Playdate.all.where("inviter_id = ? OR receiver_id = ?", @user, @user)
+
   end
 end

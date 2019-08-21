@@ -12,13 +12,16 @@ Rails.application.routes.draw do
   get "parents", to: "users#index"
   get "dashboard", to: "playdates#index"
   resources :users, except: [:destroy] do
+
     resources :children, only: [:new, :create, :edit, :update, :destroy]
-    resources :conversation, only: [:new, :create, :destroy, :show, :index] do
-      resources :messages, only: [:new, :create, :index]
-    end
+    resources :conversations, only: [:new, :create, :destroy]
     resources :playdates, only: [:new, :create, :edit, :update, :destroy] do
       resources :reviews, only: [:new, :create]
     end
   end
+  resources :conversations, only: [:show, :index] do
+    resources :messages, only: [:new, :create, :index]
+  end
+
   resources :playdates, only: [:index]
 end

@@ -1,0 +1,30 @@
+<div class="sidenav">
+  <h1>Your Conversations</h1>
+  <ul>
+    <% @conversations.each do |conversation| %>
+      <li>
+        <ul>
+          <%= link_to conversations_path(conversation_id: conversation.id), class: "chatlink" do %>
+          <% conversation.users.each do |user| %>
+            <% if user != current_user %>
+              <%= user.last_name %> family
+            <% end %>
+          <% end %>
+          <% end %>
+        </ul>
+      </li>
+
+
+    <% end %>
+  </ul>
+</div>
+  <div class="main chat">
+
+      <%= render "show", messages: @conversation.messages, conversation: @conversation %>
+
+    <div class="form">
+      <%= render '/messages/form', message: Message.new, conversation: @conversation, user: @current_user %>
+    </div>
+  </div>
+</div>
+

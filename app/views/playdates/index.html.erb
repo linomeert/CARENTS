@@ -9,12 +9,12 @@
     <div class="contentblok" id="upcoming">
       <h2>My upcoming playdates</h2>
       <div class="playdategrid">
-        <% if @playdates_upcoming.empty? %>
+        <% if @playdates_pending.empty? %>
           <p>No upcoming playdates. Find a playdate!</p>
         <% else %>
-          <% @playdates_upcoming.each do |playdate| %>
+          <% @playdates_pending.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
-          <% receiver = User.find(playdate.receivers_id) %>
+          <% receiver = User.find(playdate.receiver_id) %>
             <div class="pl-block">
               <div class="playcontent">
                 <div class="avatars">
@@ -43,14 +43,14 @@
     </div>
 
     <div class="contentblok" id="to_accept">
-      <h2>My playdate requests</h2>
+      <h2>My past playdates</h2>
       <div class="playdategrid">
-        <% if @playdates_to_accept.empty? %>
+        <% if @playdates_past.empty? %>
           <p>No playdate requests yet. No worries, invite someone!</p>
         <% else %>
-          <% @playdates_to_accept.each do |playdate| %>
+          <% @playdates_past.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
-          <% receiver = User.find(playdate.receivers_id) %>
+          <% receiver = User.find(playdate.receiver_id) %>
             <div class="pl-block">
               <div class="playcontent">
                 <div class="avatars">
@@ -59,6 +59,9 @@
                 </div>
                 <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
                 <p><%= playdate.description %></p>
+                 <%= link_to new_user_playdate_review_path(current_user, playdate), class: "btn btn-primary" do %>
+                    Add a review
+                <% end %>
               </div>
               <div class="footerbox">
                 <div class="date">

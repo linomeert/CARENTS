@@ -15,53 +15,77 @@
           <div class="location"><i class="fas fa-location-arrow"></i> @user.address</div>
 
           <div class="buttons">
-            <a href="#" class="btn btn-primary"><i class="fas fa-comments"></i> Chat!</a>
+            <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
+                <i class="fas fa-comments"></i> Chat!
+            <% end %>
+
             <a href="#" class="btn btn-danger"><i class="fas fa-flag"></i> Report</a>
+
+
           </div>
 
           <hr>
         </div>
         <div class="profile-detail">
-
-              <ul class="nav nav-tabs">
-                <!-- add data-toggle attribute to the anchors -->
-                <li class="active"><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
-                <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
-                <li><a data-toggle="tab" href="#menu2">Details</a></li>
-              </ul>
-                <div class="tab-content">
-                <div id="home" class="tab-pane fade in active show">
-                 <h5>About <strong><%= @user.first_name %></strong></h5>
-                  <p> <%= @user.biography %></p>
-                </div>
-                <div id="menu1" class="tab-pane fade">
-                   <% @user.children.each do |child| %>
-                        <h5>About <strong><%= child.name %></strong></h5>
-                        <p><%= child.biography %></p>
-                        <ul class="interestlist">
-                        <% child.interests.each do |interest| %>
-                          <li>
-                            <img src="<%= interest.photo %>" alt="Smiley face" height="42" width="42">
-                            <p><%= interest.name %></p>
-                          </li>
-                        <% end %>
-                      </ul>
+          <ul class="nav nav-tabs">
+            <!-- add data-toggle attribute to the anchors -->
+            <li class="active"><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
+            <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
+            <li><a data-toggle="tab" href="#menu2">Details</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active show">
+             <h5>About <strong><%= @user.first_name %></strong></h5>
+              <p> <%= @user.biography %></p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+               <% @user.children.each do |child| %>
+                    <h5>About <strong><%= child.name %></strong></h5>
+                    <p><%= child.biography %></p>
+                    <ul class="interestlist">
+                    <% child.interests.each do |interest| %>
+                      <li>
+                        <img src="<%= interest.photo %>" alt="Smiley face" height="42" width="42">
+                        <p><%= interest.name %></p>
+                      </li>
                     <% end %>
-                </div>
-                <div id="menu2" class="tab-pane fade">
-                   <% @user.children.each do |child| %>
-                        <h5>Details</h5>
-                        <% child.conditions.each do |condition| %>
-                           <h6><%= condition.name %></h6>
-                           <p><%= condition.description %></p>
-                        <% end %>
+                  </ul>
+                <% end %>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+               <% @user.children.each do |child| %>
+                    <h5>Details</h5>
+                    <% child.conditions.each do |condition| %>
+                       <h6><%= condition.name %></h6>
+                       <p><%= condition.description %></p>
                     <% end %>
-                </div>
-
+                <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="review">
+        <h3>Previous playdate experiences</h3>
+        <div class="reviews_container">
+          <% @playdates.each do |playdate| %>
+            <% playdate.reviews.each do |review| %>
+              <div class="review-item">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>The <%= @user.last_name %> family</h4>
+                    <div class="review-image" style="background-image:url(<%= @user.photo %>)"></div>
+                  </div>
+                  <div class="col-md-6">
+                    <h5><%= review.title %></h5>
+                    <p><%= review.description %></p>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+          <% end %>
+        </div>
+    </div>
   </div>
-</div>
 </div>
 

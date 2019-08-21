@@ -10,10 +10,10 @@
 }
 
 .navbar-light .navbar-nav .nav-link{
-  color: $green;
+  color: black;
 }
 .navbar-light .navbar-nav .nav-link:hover{
-  color: white;
+  color: black
 }
 .navbar-lewagon .navbar-brand img {
   width: 140px;
@@ -28,4 +28,9 @@
   background: #00000000;
   border: 0px;
 
+
+}
+
+.transparant a.nav-link{
+  color:white !important;
 }

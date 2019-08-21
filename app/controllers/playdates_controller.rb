@@ -2,12 +2,14 @@ class PlaydatesController < ApplicationController
   before_action :set_playdate, only: [:show, :edit, :update, :destroy]
 
   def index
+
     @playdates = Playdate.all
     @playdates_to_accept = Playdate.all.where('receiver_id': current_user, 'status': nil)
     @playdates_pending = Playdate.all.where('inviter': current_user, 'status': nil)
-    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receivers_id = ?", DateTime.now, true, current_user, current_user, )
-    @playdates_past = Playdate.all.where("date < ? AND status = ? AND inviter_id = ? OR receivers_id = ?", DateTime.now, true, current_user, current_user, )
+    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
+    @playdates_past = Playdate.all.where("date < ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, current_user, current_user)
     @playdates_rejected = Playdate.all.where("date > ? AND inviter_id = ? AND status = ?", DateTime.now, current_user, false)
+
   end
 
   def edit
@@ -47,6 +49,6 @@ class PlaydatesController < ApplicationController
   def playdate_params
     # *Strong params*: You need to *whitelist* what can be updated by the user
     # Never trust user data!
-    params.require(:playdate).permit(:description, :status, :status, :date, :location)
+    params.require(:playdate).permit(:description, :status, :date, :location)
   end
 end

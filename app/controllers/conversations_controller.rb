@@ -13,7 +13,6 @@ class ConversationsController < ApplicationController
     @conversation.user_ids << params[:user_id]
     @conversation.save!
     raise
-
   end
 
   def create

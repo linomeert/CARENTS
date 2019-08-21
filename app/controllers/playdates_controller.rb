@@ -3,7 +3,7 @@ class PlaydatesController < ApplicationController
 
   def index
     @playdates = Playdate.all
-    @playdates_to_accept = Playdate.all.where('receivers_id': current_user, 'status': nil)
+    @playdates_to_accept = Playdate.all.where('receiver_id': current_user, 'status': nil)
     @playdates_pending = Playdate.all.where('inviter': current_user, 'status': nil)
     @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receivers_id = ?", DateTime.now, true, current_user, current_user, )
     @playdates_past = Playdate.all.where("date < ? AND status = ? AND inviter_id = ? OR receivers_id = ?", DateTime.now, true, current_user, current_user, )
@@ -16,15 +16,16 @@ class PlaydatesController < ApplicationController
   def new
     @playdate = Playdate.new
     @receiver = User.find params[:user_id]
+
   end
 
   def create
+
     @playdate = Playdate.new(playdate_params)
     @playdate.inviter = current_user
-    @playdate.receivers_id = params[:user_id]
+    @playdate.receiver_id = params[:user_id]
 
     if @playdate.save
-
       redirect_to user_path(current_user)
     else
       render :new

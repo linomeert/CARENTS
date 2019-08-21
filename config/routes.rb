@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'playdates/index'
-  get 'playdates/edit'
-  get 'playdates/new'
-  get 'playdates/show'
   get 'user/index'
   get 'user/show'
   devise_for :users

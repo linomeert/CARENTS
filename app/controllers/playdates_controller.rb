@@ -18,7 +18,6 @@ class PlaydatesController < ApplicationController
   def new
     @playdate = Playdate.new
     @receiver = User.find params[:user_id]
-
   end
 
   def create
@@ -26,6 +25,7 @@ class PlaydatesController < ApplicationController
     @playdate = Playdate.new(playdate_params)
     @playdate.inviter = current_user
     @playdate.receiver_id = params[:user_id]
+
 
     if @playdate.save
       redirect_to user_path(current_user)

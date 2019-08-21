@@ -8,7 +8,8 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/tibal/cjzl93w5u09wu1cl8a8eiy3bk'
+      // style: "mapbox://styles/mapbox/streets-v10"
     });
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
 

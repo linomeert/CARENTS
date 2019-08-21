@@ -7,6 +7,12 @@
   flex-grow: 0;
 }
 
+.navbar-light .navbar-nav .nav-link{
+  color: $green;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+  color: white;
+}
 .navbar-lewagon .navbar-brand img {
   width: 140px;
 }

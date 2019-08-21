@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "parents", to: "users#index"
   get "dashboard", to: "playdates#index"
-  resources :users do
+  resources :users, except: [:destroy] do
     resources :children, only: [:new, :create, :edit, :update, :destroy]
     resources :conversation, only: [:new, :create, :destroy, :show, :index] do
       resources :messages, only: [:new, :create, :index]

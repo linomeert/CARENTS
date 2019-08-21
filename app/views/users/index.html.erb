@@ -2,7 +2,13 @@
   <div class="user-container">
     <h1>Meet Carents in Brussels</h1>
     <p>Search amongst this list the family you want</p>
+
     <div class="cards">
+      <div
+        id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
 
       <% @users.each do |user| %>
       <%= link_to user_path(id: user.id) do %>
@@ -32,6 +38,7 @@
         </div>
         <% end %>
       <% end %>
+
     </div>
   </div>
 </div>

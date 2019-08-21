@@ -9,6 +9,13 @@ class UsersController < ApplicationController
     else
      @users = User.near([@current_lat, @current_lon], 10, :units => :km)
    end
+     @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+      }
+    end
   end
 
   def show

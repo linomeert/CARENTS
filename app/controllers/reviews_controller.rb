@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
+    @playdate = Playdate.find(params[:playdate_id])
   end
 
   def create
@@ -8,15 +9,12 @@ class ReviewsController < ApplicationController
     @playdate = Playdate.find(params[:playdate_id])
     @review.playdate = @playdate
     @review.save
-    redirect_to playdate_path(@playdate)
-
+    redirect_to dashboard_path
   end
 end
 
-
-  private
-
+private
 
 def review_params
-   params.require(:review).permit(:title, :description)
+  params.require(:review).permit(:title, :description)
 end

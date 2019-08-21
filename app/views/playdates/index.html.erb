@@ -43,12 +43,12 @@
     </div>
 
     <div class="contentblok" id="to_accept">
-      <h2>My playdate requests</h2>
+      <h2>My past playdates</h2>
       <div class="playdategrid">
-        <% if @playdates_to_accept.empty? %>
+        <% if @playdates_past.empty? %>
           <p>No playdate requests yet. No worries, invite someone!</p>
         <% else %>
-          <% @playdates_to_accept.each do |playdate| %>
+          <% @playdates_past.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
           <% receiver = User.find(playdate.receivers_id) %>
             <div class="pl-block">

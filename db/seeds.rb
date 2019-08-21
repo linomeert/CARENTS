@@ -193,7 +193,7 @@ tom = User.create(
     email: "tomdedonker@gmail.com",
     password:"password123",
     username: "Tomdedonker",
-    address: "Rue Sainte-Catherine 17-19, 1000 Bruxelles",
+    address: "Brussels",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/lozwxlxn0ypgccjfvtuk.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
@@ -204,7 +204,7 @@ john = User.create(
     email: "johnpeeters@gmail.com",
     password:"password123",
     username: "johnpeeters",
-    address: "Avenue d'Auderghem, 63 - 1040 Bruxelles",
+    address: "Brussels",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297376/samples/people/users/jrqc3m3ywbmmfth2w5bi.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -216,7 +216,7 @@ sarah = User.create(
     email: "sarahdubois@gmail.com",
     password:"password123",
     username: "Sarahdubois",
-    address: "Boulevard Louis Mettewie 44, 1080 Molenbeek-Saint-Jean",
+    address: "Molenbeek-Saint-Jean",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/acihmhasaqzwguxrf0cn.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
@@ -227,7 +227,7 @@ patricia = User.create(
     email: "patriciamaes@gmail.com",
     password:"password123",
     username: "Patriciamaes",
-    address: "Drève Olympique 15, 1070 Anderlecht",
+    address: "Anderlecht",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/liowss7bgoltmxys1gxz.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -239,7 +239,7 @@ pieter = User.create(
     email: "pieter.j@gmail.com",
     password:"password123",
     username: "Pieterjacobs",
-    address: "Boulevard Anspach 106, 1000 Bruxelles",
+    address: "Brussels",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/ma6zsmthrpaexmqmni9m.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -251,7 +251,7 @@ tomas = User.create(
     email: "tomasclaes@gmail.com",
     password:"password123",
     username: "tomclaes",
-    address: "d'Arconatistraat 1, 1700 Dilbeek",
+    address: "Dilbeek",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/ic5n2g7nrpw5thoktrc9.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -263,7 +263,7 @@ liesa = User.create(
     email: "liesa.dupont@gmail.com",
     password:"password123",
     username: "liesa.dupont",
-    address: " Ninoofsesteenweg 491, 1701 Dilbeek",
+    address: " Dilbeek",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/f10tc8tsltwjeienrah0.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -275,7 +275,7 @@ ann = User.create(
     email: "annhermans@gmail.com",
     password:"password123",
     username: "Annhermans",
-    address: "Chaussée de Ninove 500, 1070 Anderlecht",
+    address: "Anderlecht",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/l2kaaixfqu1tyyfuqrzk.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -287,7 +287,7 @@ fien = User.create(
     email: "missfien@gmail.com",
     password:"password123",
     username: "Fienbeckers",
-    address: "Chaussée de Forest 32, 1060 Saint-Gilles",
+    address: "Saint-Gilles",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/pfza4igjvwjplwu6lbqw.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
@@ -299,7 +299,7 @@ louis = User.create(
     email: "louisverbeke@gmail.com",
     password:"password123",
     username: "Louisverbeke",
-    address: "Rue Vanderkindere 121, 1180 Uccle",
+    address: "Uccle",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297375/samples/people/users/muho7tltu2ymcycwj9o6.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 

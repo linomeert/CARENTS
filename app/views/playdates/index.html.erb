@@ -9,10 +9,10 @@
     <div class="contentblok" id="upcoming">
       <h2>My upcoming playdates</h2>
       <div class="playdategrid">
-        <% if @playdates_upcoming.empty? %>
+        <% if @playdates_pending.empty? %>
           <p>No upcoming playdates. Find a playdate!</p>
         <% else %>
-          <% @playdates_upcoming.each do |playdate| %>
+          <% @playdates_pending.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
           <% receiver = User.find(playdate.receiver_id) %>
             <div class="pl-block">

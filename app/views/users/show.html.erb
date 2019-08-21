@@ -15,8 +15,13 @@
           <div class="location"><i class="fas fa-location-arrow"></i> @user.address</div>
 
           <div class="buttons">
-            <a href="#" class="btn btn-primary"><i class="fas fa-comments"></i> Chat!</a>
+            <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
+                <i class="fas fa-comments"></i> Chat!
+            <% end %>
+
             <a href="#" class="btn btn-danger"><i class="fas fa-flag"></i> Report</a>
+
+
           </div>
 
           <hr>

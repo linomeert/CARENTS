@@ -21,7 +21,7 @@ class PlaydatesController < ApplicationController
   def create
     @playdate = Playdate.new(playdate_params)
     @playdate.inviter = current_user
-    @playdate.receivers_id = params[:user_id]
+    @playdate.receiver_id = params[:user_id]
 
     if @playdate.save
 

@@ -21,6 +21,32 @@ class ConversationsController < ApplicationController
   def new
     @conversation = Conversation.new
     @user = User.find(params[:user_id])
+    @conversations_user = []
+    @conversations = Conversation.all
+    @messages = Message.all.where('conversation': params[:id])
+
+    #fetching my conversations
+
+    @conversations.each do |conversation|
+      if conversation.users.map(&:id).include? current_user.id
+        @conversations_user << conversation
+      end
+    end
+
+    # checking if conversations with user already exist
+
+    if @conversations_user.map(&:user_ids).flatten.include? @user.id
+
+      # selecting existing conversation with user
+
+      @conversations.each do |conversation|
+        if conversation.user_ids.include? @user.id
+          @conversation_user = conversation
+        end
+      end
+      # redirecting to conversation with user
+     redirect_to conversation_path(@conversation_user)
+    end
   end
 
   def create

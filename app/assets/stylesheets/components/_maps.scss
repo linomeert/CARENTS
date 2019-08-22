@@ -13,6 +13,12 @@
 
 #map {
   height: 500px;
-  grid-column-start: 1;
-  grid-column-end: -1;
+  grid-column-start: 0;
+  grid-column-end: 5;
+}
+
+.marker_svg {
+  path {
+    fill: #43d037;
+  }
 }

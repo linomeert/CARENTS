@@ -19,7 +19,15 @@
 }
 
 
+.convo.message-received {
+    display: flex;
+    justify-content: flex-end;
+}
 
+.convo.message-received .chatblub {
+    background: #8cd923;
+    color:white;
+}
 
 
 .chat .avatar-large {

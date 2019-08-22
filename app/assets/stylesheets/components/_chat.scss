@@ -18,8 +18,20 @@
     float: left;
 }
 
+.convo {
+    display: flex;
+    justify-content: flex-start;
+}
 
+.convo.message-received {
+    display: flex;
+    justify-content: flex-end;
+}
 
+.convo.message-received .chatblub {
+    background: #8cd923 !important;
+    color:white;
+}
 
 
 .chat .avatar-large {
@@ -35,14 +47,14 @@ ul.chat {
   list-style: none
 }
 
-.chat .convo div p {
+.chat .convo .chatblub p {
   margin:0px;
 }
-.chat .convo div {
+.chat .convo .chatblub {
     background: white;
     padding: 20px;
     border-radius: 4px;
-    width: 50%;
+
 
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);

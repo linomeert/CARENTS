@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   get 'playdates/show'
   get 'user/index'
   get 'user/show'
-  devise_for :users
+
   root to: 'pages#home'
+  devise_for :users
+
+
   get "parents", to: "users#index"
   get "dashboard", to: "playdates#index"
+
   resources :users, except: [:destroy] do
 
     resources :children, only: [:new, :create, :edit, :update, :destroy]

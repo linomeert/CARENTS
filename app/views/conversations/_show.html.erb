@@ -15,9 +15,11 @@
         <li>
           <div class="convo <%= current_user == message.sender ? 'message-sent' : 'message-received' %>">
             <div>
-              <p><%= message.content %></p>
+              <div class="chatblub">
+                <p><%= message.content %></p>
+              </div>
+              <span class="username"><%= message.sender.username %></span>
             </div>
-            <span class="username"><%= message.sender.username %></span>
           </div>
         </li>
       <% end %>

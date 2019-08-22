@@ -1,0 +1,11 @@
+<% @messages.each do |message| %>
+  <li>
+    <div class="row <%= current_user == message.sender ? 'message-sent' : 'message-received' %>">
+      <div>
+        <p><%= message.content %></p>
+        <p><strong>- <%= message.sender.username %></strong></p>
+      </div>
+    </div>
+  </li>
+
+<% end %>

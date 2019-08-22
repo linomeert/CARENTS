@@ -1,0 +1,43 @@
+<div class="sidenav">
+    <% if @conversations.empty? %>
+      <p>No conversations yet!</p>
+    <% else %>
+      <ul>
+        <% @conversations.each do |conversation| %>
+          <li class="<%= conversation.id.to_s == params[:conversation_id.to_s] ? 'active' : 'nonactiv' %>">
+              <%= link_to conversations_path(conversation_id: conversation.id), class: "chatlink" do %>
+                <% conversation.users.each do |user| %>
+                  <% if user != current_user %>
+                    <div class="avatar-large" style="background:url(<%= user.photo %>)"></div>
+                    <p><strong><%= user.last_name %></strong> family</p>
+                  <% end %>
+                <% end %>
+              <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
+</div>
+  <div class="main chat">
+
+
+      <% if @conversations.empty? %>
+        <div class="container"><p>It's blank here!</p></div>
+      <% else %>
+        <%= render "show", messages: @conversation.messages, conversation: @conversation %>
+      <% end %>
+
+    <div class="form">
+
+      <% if @conversations.empty? %>
+
+      <% else  %>
+        <%= render '/messages/form', message: Message.new, conversation: @conversation, user: @current_user %>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
+

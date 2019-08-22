@@ -1,0 +1,90 @@
+
+.chat .form {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: white;
+    left: 400px;
+    padding: 10px;
+}
+
+.chat {
+  padding-bottom:60px;
+}
+
+.chat .form-group {
+    margin-bottom: 1rem;
+    width: 70%;
+    float: left;
+}
+
+
+
+
+
+.chat .avatar-large {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,1);
+}
+
+
+ul.chat {
+  margin:0px;
+  padding:0px;
+  list-style: none
+}
+
+.chat .convo div p {
+  margin:0px;
+}
+.chat .convo div {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    width: 50%;
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+}
+
+
+span.username {
+    color: darkgrey;
+    margin: 4px 0px 20px 0px;
+    display: block;
+}
+
+a.playdate_invite {
+  background: #8cd923;
+  position: fixed;
+  right: 16px;
+  top: 70px;
+  width: 170px;
+  height: 170px;
+  text-align: center;
+  border-radius: 130px;
+  color: white;
+  font-weight:bold;
+  transition: .3s;
+}
+a.playdate_invite:hover {
+  background:#8bf100;
+  height:250px;
+  width:250px;
+
+ -webkit-box-shadow: 0px 0px 33px 0px rgba(139,241,0,1);
+ -moz-box-shadow: 0px 0px 33px 0px rgba(139,241,0,1);
+ box-shadow: 0px 0px 33px 0px rgba(139,241,0,1);
+}
+
+a.playdate_invite {
+  text-decoration:none;
+}
+
+a.playdate_invite img {
+  width:40%;
+  margin: 28px auto 3px auto;
+}
+

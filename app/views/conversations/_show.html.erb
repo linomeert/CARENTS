@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Say hi!</h1>
+  <% @receiver = @conversation.users.where.not(id: current_user.id) %>
+  <% if messages.present? %>
+    <%= link_to new_user_playdate_path(@receiver.first), class: "playdate_invite" do %>
+      <%= image_tag "kids.png", class: "iconimg" %>
+      Plan a playdate!
+      <% end %>
+  <% end %>
+
+
+  <% if messages %>
+    <ul class="chat">
+      <% messages.each do |message| %>
+        <li>
+          <div class="convo <%= current_user == message.sender ? 'message-sent' : 'message-received' %>">
+            <div>
+              <p><%= message.content %></p>
+            </div>
+            <span class="username"><%= message.sender.username %></span>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Start a conversation!</p>
+  <% end %>
+
+</div>
+
+
+

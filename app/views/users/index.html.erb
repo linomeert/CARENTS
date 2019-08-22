@@ -1,51 +1,16 @@
 <div class="container">
  <div class="user-container">
-        <div class="toggle">
-          <h1>Meet Carents, Make friends</h1>
-          <div>
-            <%= image_tag "markermap.png", style: "width: 50px;" %>
-          <label id="maptoggle">
-            <input type="checkbox">
-            <span id="map_toggle_l" class="slider round"></span>
-              </label>
-              </div>
+    <div class="toggle">
+      <h1>Meet Carents, Make friends</h1>
+      <div>
+        <%= image_tag "markermap.png", style: "width: 50px;" %>
+        <label id="maptoggle">
+          <input type="checkbox">
+          <span id="map_toggle_l" class="slider round"></span>
+         </label>
+      </div>
+    </div>
 
-  <div class="user-container">
-    <h1>Meet Carents, Make friends</h1>
-
-    <div class="cards">
-      <div
-        id="map"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-
-      <% @users.each do |user| %>
-      <%= link_to user_path(id: user.id) do %>
-        <div class="usercards">
-          <div class="card-image" style="background-image:url(<%= user.photo %>)"></div>
-
-
-          <div class="userbio">
-             <h3><%= user.last_name %> family</h3>
-             <p><%= user.address %></p>
-            <% if user.children.count == 1 %>
-              <p><%= user.children.count %> child</p>
-            <% else %>
-              <p><%= user.children.count %> children</p>
-            <% end %>
-            <ul>
-              <% user.children.each do |child| %>
-
-                  <% child.conditions.each do |condition| %>
-                    <li><%= condition.name %></li>
-                  <% end %>
-
-              <% end %>
-            </ul>
-          </div>
-
-        </div>
      <div
        id="map"
        class="hide"
@@ -79,5 +44,3 @@
    </div>
  </div>
 </div>
-
-

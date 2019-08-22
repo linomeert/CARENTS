@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     if (@current_lat.nil? || @current_lon.nil?)
       @users = User.all
     else
-     @users = User.near([@current_lat, @current_lon], 10, :units => :km)
-   end
+      @users = User.near([@current_lat, @current_lon], 10, :units => :km)
+    end
      @markers = @users.map do |user|
       {
         lat: user.latitude,

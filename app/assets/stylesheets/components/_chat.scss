@@ -18,6 +18,10 @@
     float: left;
 }
 
+.convo {
+    display: flex;
+    justify-content: flex-start;
+}
 
 .convo.message-received {
     display: flex;
@@ -43,10 +47,10 @@ ul.chat {
   list-style: none
 }
 
-.chat .convo div p {
+.chat .convo .chatblub p {
   margin:0px;
 }
-.chat .convo div {
+.chat .convo .chatblub {
     background: white;
     padding: 20px;
     border-radius: 4px;

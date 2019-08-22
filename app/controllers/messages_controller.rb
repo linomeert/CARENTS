@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @message.sender_id = current_user.id
     @message.conversation_id = params[:conversation_id]
     if @message.save
-      redirect_to conversations_path(@conversation)
+      redirect_to conversations_path(conversation_id: @conversation)
     else
       redirect_to conversations_path
     end

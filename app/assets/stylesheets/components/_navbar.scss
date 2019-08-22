@@ -1,7 +1,13 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
-  z-index: 9999;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: white;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #e4e4e4;
 }
 
 

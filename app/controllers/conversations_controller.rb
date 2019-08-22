@@ -1,6 +1,8 @@
 class ConversationsController < ApplicationController
   def index
-    @conversations = Conversation.all
+    @conversations_all = Conversation.all
+    @conversations = @conversations_all.select{|convo|  convo.users.map(&:id).include? current_user.id }.sort {|a, b| b[:updated_at] <=> a[:updated_at]}
+
     @conversations_user = []
     @messages = Message.all.where('conversation': params[:id])
 

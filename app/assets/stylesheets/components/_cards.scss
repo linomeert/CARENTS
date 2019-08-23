@@ -10,9 +10,9 @@
     position:relative;
 }
 
-.card-image i {
+.card-image span.viewprofile{
   color:white;
-  font-size:30px;
+  font-size:15px;
   opacity: 0;
   transition: .3s;
 }
@@ -98,9 +98,10 @@ a:hover .usercards .card-image:after {
  opacity: .4;
 }
 
-a:hover .usercards .card-image i{
+a:hover .usercards .card-image span{
   opacity: 100;
   z-index: 999;
+  color:white;
 }
 
 

@@ -11,15 +11,14 @@
       </div>
       <div class="col-md-7">
         <div class="profile-intro">
-          <h1>The <%= @user.last_name %> family</h1>
-          <div class="location"><i class="fas fa-location-arrow"></i> @user.address</div>
+          <h1>The <span><%= @user.last_name %></span> family</h1>
+          <div class="location"><i class="fas fa-location-arrow"></i> <%= @user.address %></div>
 
           <div class="buttons">
             <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
-                <i class="fas fa-comments"></i> Chat!
+                <i class="fas fa-comments"></i> Chat to request playdate!
             <% end %>
 
-            <a href="#" class="btn btn-danger"><i class="fas fa-flag"></i> Report</a>
 
 
           </div>

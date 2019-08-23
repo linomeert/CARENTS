@@ -1,4 +1,12 @@
+h2.logo {
+    font-size: 37px;
+    color: #91d921;
+    margin: 0px;
+}
+
 .navbar-lewagon {
+
+
     -webkit-box-pack: justify;
     justify-content: space-between;
     background: white;
@@ -39,4 +47,9 @@
 
 .transparant a.nav-link{
   color:white !important;
+
+}
+
+a.nav-link {
+  font-family:$headers-font;
 }

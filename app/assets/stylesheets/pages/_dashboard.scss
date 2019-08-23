@@ -17,7 +17,7 @@
 
 .playdategrid {
   display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-column-gap: 40px;
 
 }
@@ -36,13 +36,23 @@
 }
 
 .footerbox {
-    background: whitesmoke;
+
     border-top: 1px solid #e8e8e8;
     padding: 10px 10px;
     display:flex;
     justify-content: space-between;
+    background: #8cd923; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #8cd923 0%, #cde002 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #8cd923 0%,#cde002 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #8cd923 0%,#cde002 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cd923', endColorstr='#cde002',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    color:white;
 
 
+}
+
+.footerbox a {
+  color:white;
 }
 
 @media(max-width: 992px) {

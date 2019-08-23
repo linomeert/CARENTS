@@ -1,9 +1,9 @@
 <div class="container">
  <div class="user-container">
     <div class="toggle">
-      <h1>Meet Carents, Make friends</h1>
+      <h1>Meet <span>Carents</span>, <br>make <span>Friends</span>, <br>organise <span>Playdates</span></h1>
       <div>
-        <%= image_tag "markermap.png", style: "width: 50px;" %>
+        <%= image_tag "markermap.png" %>
         <label id="maptoggle">
           <input type="checkbox">
           <span id="map_toggle_l" class="slider round"></span>
@@ -21,26 +21,46 @@
      <% @users.each do |user| %>
      <%= link_to user_path(id: user.id) do %>
        <div class="usercards">
-         <div class="card-image" style="background-image:url(<%= user.photo %>)"></div>
+         <div class="card-image" style="background-image:url(<%= user.photo %>)">
+           <i class="fas fa-search"></i>
+         </div>
          <div class="userbio">
-            <h3><%= user.last_name %> family</h3>
+            <h4><%= user.last_name %> family</h4>
             <p><%= user.address %></p>
-           <% if user.children.count == 1 %>
-             <p><%= user.children.count %> child</p>
-           <% else %>
-             <p><%= user.children.count %> children</p>
-           <% end %>
-           <ul>
-             <% user.children.each do |child| %>
-                 <% child.conditions.each do |condition| %>
-                   <li><%= condition.name %></li>
-                 <% end %>
-             <% end %>
-           </ul>
+
+
+         </div>
+         <div class="card-footer">
+          <div class="kid_count">
+            <% user.children.count.times do %>
+              <i class="fas fa-child"></i>
+            <% end %>
+          </div>
+          <div class="specialities">
+            <ul>
+
+              <% user.children.each do |child| %>
+                  <% child.conditions.each do |condition| %>
+                    <li><%= condition.name %></li>
+                  <% end %>
+              <% end %>
+            </ul>
+          </div>
          </div>
        </div>
        <% end %>
      <% end %>
    </div>
  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <div class="footer-copyright">
+    <h4> Make <i class="far fa-handshake"></i> friends </h4>
+  </div>
 </div>

@@ -71,6 +71,13 @@ input:checked + .slider:before {
     display: flex;
     justify-content: space-between;
     margin-bottom:40px;
+    padding: 50px 70px;
+    align-items:center;
+}
+
+.toggle img {
+  width: 80px;
+  margin-top: 12px;
 }
 
 

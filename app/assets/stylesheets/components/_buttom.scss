@@ -11,3 +11,14 @@ a.btn.return {
     color: #696969;
     margin: 20px 0px 0px 20px;
 }
+
+
+a.btn.btn-trans {
+    border: 1px solid #acdc17;
+    color: #acdc17;
+}
+
+a.btn.btn-trans:hover {
+    background: #acdc17;
+    color: white;
+}

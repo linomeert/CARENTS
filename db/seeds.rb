@@ -208,6 +208,7 @@ john = User.create(
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297376/samples/people/users/jrqc3m3ywbmmfth2w5bi.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
+
 )
 
 sarah = User.create(
@@ -219,6 +220,7 @@ sarah = User.create(
     address: "Molenbeek-Saint-Jean",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/acihmhasaqzwguxrf0cn.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
 )
 
 patricia = User.create(
@@ -230,6 +232,7 @@ patricia = User.create(
     address: "Anderlecht",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/liowss7bgoltmxys1gxz.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
 
 )
 

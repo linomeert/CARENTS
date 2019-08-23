@@ -7,7 +7,7 @@
 <div class="main">
   <div class="container">
     <div class="contentblok" id="upcoming">
-      <h2>My upcoming playdates</h2>
+      <h2>My pending playdates</h2>
       <div class="playdategrid">
         <% if @playdates_pending.empty? %>
           <p>No upcoming playdates. Find a playdate!</p>
@@ -57,9 +57,9 @@
                   <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
                   <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
                 </div>
-                <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
+                <h4>Playdate with the <%= receiver.last_name %> family</h4>
                 <p><%= playdate.description %></p>
-                 <%= link_to new_user_playdate_review_path(current_user, playdate), class: "btn btn-primary" do %>
+                 <%= link_to new_user_playdate_review_path(current_user, playdate), class: "btn btn-trans" do %>
                     Add a review
                 <% end %>
               </div>

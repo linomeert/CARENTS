@@ -1,16 +1,17 @@
 <div class="container">
   <div class="subscr-blok">
-    <h2>Sign up</h2>
+    <h2>Welcome</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :first_name  %>
-        <%= f.input :last_name  %>
-        <%= f.input :biography  %>
-        <%= f.input :username  %>
-        <%= f.input :address  %>
+        <%= f.input :first_name, :label => "What's your name ?" %>
+        <%= f.input :last_name, :label => "What's your family name ?"  %>
+        <%= f.input :biography, :label => "Tell us more about your familly"  %>
+        <%= f.input :username, :label => "What's your username ?"  %>
+        <%= f.input :address, :label => "What's your localisation ?"  %>
+
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :email,
@@ -27,11 +28,11 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "A bit more ...", class: "btn btn-flat" %>
       </div>
     <% end %>
 
-    <%= render "devise/shared/links" %>
-  <div class="subscr-blok">
+    <%#= render "devise/shared/links" %>
+
 
 </div>

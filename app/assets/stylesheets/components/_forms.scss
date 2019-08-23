@@ -1,0 +1,15 @@
+  .subscr-blok {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.assoc-columns {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+ fieldset {
+  display: contents;
+  legend {
+    display: none;}
+}
+
+}

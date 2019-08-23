@@ -1,4 +1,4 @@
-const conversationId = document.querySelector("#conversation-container").dataset.conversationId
+var conversationId = document.querySelector("#conversation-container").dataset.conversationId
 App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
   { channel: "MessagesChannel", conversation_id: conversationId},
   {
@@ -10,7 +10,7 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
 
 
   renderMessage: function(data) {
-    const currentUser = document.cookie
+    var currentUser = document.cookie
     console.log(currentUser)
     console.log("username=" + data.user)
 

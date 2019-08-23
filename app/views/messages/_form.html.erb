@@ -1,4 +1,15 @@
+<!--
 <%= simple_form_for [conversation, message], url: conversation_messages_path(conversation, message, params: {conversation_id: conversation.id}), method: "post" do |f| %>
       <%= f.input :content, inline_label: 'Say hi!', as: :string, label: false%>
       <%= f.submit "Send", class: "btn btn-primary" %>
+<% end %>
+-->
+
+
+<%= form_for message, url: conversation_messages_path(conversation), remote: true, authenticity_token: true do |f| %>
+  <%= f.label :your_message %>:
+  <%= f.text_area :content, class: "form-control", data: {textarea: "message"} %>
+
+  <%= f.hidden_field :conversation_id, value: conversation.id %>
+  <%= f.submit "send", class: "btn btn-primary", style: "display", data: {send: "message"} %>
 <% end %>

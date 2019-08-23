@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  mount ActionCable.server => '/cable'
   get 'playdates/index'
   get 'playdates/edit'
   get 'playdates/new'
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users, except: [:destroy] do
 
     resources :children, only: [:new, :create, :edit, :update, :destroy]
-    resources :conversations, only: [:new, :create, :destroy]
+    resources :conversations, only: [:new, :create, :destroy], param: :slug
     resources :playdates, only: [:new, :create, :edit, :update, :destroy] do
       resources :reviews, only: [:new, :create]
     end

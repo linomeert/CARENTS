@@ -1,10 +1,14 @@
 <%= simple_form_for [current_user, @child] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :biography %>
-  <%= f.input :age %>
-
-  <%= f.select :conditions, Condition.all.collect { |x| [x.name, x.id]}, {:include_hidden => false}, :multiple => true %>
-  <%= f.select :interests, Interest.all.collect { |x| [x.name, x.id]}, {:include_hidden => false}, :multiple => true %>
-
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.input :name , :label => "What's his name ?"%>
+  <%= f.input :biography, :label => "Tell us more about him?" %>
+  <%= f.input :age, :label => "How old is he ?" %>
+  <%= "What makes her/him special ?"%>
+  <div class="assoc-columns"  >
+  <%= f.association :conditions , label: false , as: :check_boxes %>
+  </div>
+  <%= "What's hobby ?"%>
+  <div class="assoc-columns"  >
+  <%= f.association :interests, as: :check_boxes %>
+  </div>
+  <%= f.submit "Save", class: "btn btn-flat" %>
 <% end %>

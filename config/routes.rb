@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'user/show'
 
   root to: 'pages#home'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
 
   get "parents", to: "users#index"

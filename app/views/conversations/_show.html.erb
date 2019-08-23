@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>Say hi!</h1>
   <% @receiver = @conversation.users.where.not(id: current_user.id) %>
@@ -11,22 +12,17 @@
 
   <% if messages %>
     <ul class="chat">
-      <% messages.each do |message| %>
-        <li>
-          <div class="convo <%= current_user == message.sender ? 'message-sent' : 'message-received' %>">
-            <div>
-              <div class="chatblub">
-                <p><%= message.content %></p>
-              </div>
-              <span class="username"><%= message.sender.username %></span>
-            </div>
-          </div>
-        </li>
-      <% end %>
+      <div class="panel-body" id="messages">
+        <% render partial: './messages/message', collection: messages %>
+      </div>
+
     </ul>
   <% else %>
     <p>Start a conversation!</p>
   <% end %>
+
+  <%= render '/messages/form', message: Message.new, conversation: conversation, user: current_user %>
+
 
 </div>
 

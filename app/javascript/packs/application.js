@@ -7,3 +7,22 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 initMapbox();
 changeContentTabs();
+
+
+
+let interests = document.querySelectorAll(".interest-pic")
+
+if(interests){
+  interests.forEach((interest) => {
+  interest.addEventListener('click', (e) => {
+        let id_check = e.target.dataset.checkboxId
+        console.log(e.target.dataset.checkboxId)
+        console.log(document.querySelector(`#int_${id_check}`))
+        document.querySelector(`#int_${id_check}`).click()
+        document.querySelector(`#int_${id_check}`).checked ? e.target.style.backgroundColor =   "green" :  e.target.style.backgroundColor =  null
+
+
+
+  })
+  })
+}

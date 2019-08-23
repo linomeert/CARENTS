@@ -15,7 +15,7 @@ class MessagesController < ApplicationController
       MessagesChannel.broadcast_to(
         "conversation_#{conversation.id}",
         message: message.content,
-        user: message.sender.username
+        user: message.sender.username,
       )
       head :ok
     end

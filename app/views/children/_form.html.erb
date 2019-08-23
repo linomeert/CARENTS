@@ -8,7 +8,13 @@
   </div>
   <%= "What's hobby ?"%>
   <div class="assoc-columns"  >
-  <%= f.association :interests, as: :check_boxes %>
+
+    <% Interest.all.each_with_index do |int, i| %>
+          <img src="<%= int.photo %>" alt="Smiley face" class="interest-pic" data-checkbox-id="<%= int.id %>" height="42" width="42">
+        <%= check_box_tag( "child[interest_ids][]", int.id, checked = false, label: int.name, hidden: true , id: "int_#{int.id}" )  %>
+
+
+    <% end %>
 
   </div>
   <%= f.submit "Save", class: "btn btn-flat" %>

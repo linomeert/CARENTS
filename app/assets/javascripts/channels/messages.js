@@ -12,7 +12,7 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
 
 
   renderMessage: function(data) {
-    const currentUser = document.cookie
+    var currentUser = document.cookie
     console.log(currentUser)
     console.log("username=" + data.user)
 

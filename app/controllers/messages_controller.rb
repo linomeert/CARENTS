@@ -9,17 +9,15 @@ class MessagesController < ApplicationController
     conversation = Conversation.find(params[:conversation_id])
     message.sender_id = current_user.id
     message.conversation_id = params[:conversation_id]
-    #if @message.save
-    #  redirect_to conversations_path(conversation_id: @conversation)
-    #else
-    #  redirect_to conversations_path
-    #end
+
 
     if message.save
-        ActionCable.server.broadcast 'messages',
-          message: message.content,
-          user: message.sender.username
-        head :ok
+      MessagesChannel.broadcast_to(
+        "conversation_#{conversation.id}",
+        message: message.content,
+        user: message.sender.username
+      )
+      head :ok
     end
   end
 

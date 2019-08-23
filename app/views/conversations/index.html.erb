@@ -25,7 +25,9 @@
       <% if @conversations.empty? %>
         <div class="container"><p>It's blank here!</p></div>
       <% else %>
-        <%= render "show", messages: @conversation.messages, conversation: @conversation %>
+      <div id="conversation-container" data-conversation-id="<%= @conversation.id %>">
+        <%= render "show", messages: @messages, conversation: @conversation %>
+      </div>
       <% end %>
 
     <div class="form">

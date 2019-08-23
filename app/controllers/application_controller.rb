@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
+  before_action :set_user
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -9,5 +10,9 @@ class ApplicationController < ActionController::Base
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username, :address, :email, :photo, :biography])
+  end
+
+  def set_user
+    cookies[:username] = current_user.username || 'guest'
   end
 end

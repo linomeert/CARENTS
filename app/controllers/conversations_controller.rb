@@ -1,16 +1,9 @@
 class ConversationsController < ApplicationController
-  def index
-    @conversations_all = Conversation.all
-    @conversations = @conversations_all.select{|convo|  convo.users.map(&:id).include? current_user.id }.sort {|a, b| b[:updated_at] <=> a[:updated_at]}
-    @conversations_user = []
-    @messages = Message.all.where('conversation': params[:id])
 
-    @conversations.each do |conversation|
-      if conversation.users.map(&:id).include? current_user.id
-        @conversations_user << conversation
-      end
-    end
-    @conversation = params[:conversation_id].nil? ? @conversations.last : Conversation.find(params[:conversation_id])
+  def index
+    @conversations = current_user.conversations.eager_load(:users).order('conversations.updated_at DESC')
+    @conversation = params[:conversation_id].nil? ? @conversations.first : Conversation.find(params[:conversation_id])
+    @messages = Message.eager_load(:sender).where(conversation: @conversation)
   end
 
   def show
@@ -29,7 +22,7 @@ class ConversationsController < ApplicationController
 
     #checking if conversations with user already exist
     # redirecting to conversation with user
-   @existing_conversation =  @conversations.detect{|convo|  convo.users.map(&:id).include? @user.id }
+   @existing_conversation = @conversations.detect{|convo|  convo.users.map(&:id).include? @user.id }
     if @existing_conversation
     redirect_to conversations_path(conversation_id:  @existing_conversation)
     return

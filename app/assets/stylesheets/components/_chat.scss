@@ -8,14 +8,22 @@
     padding: 10px;
 }
 
-.chat {
+#contentchat {
   padding-bottom:60px;
 }
 
-.chat .form-group {
+#chatbox .form-group {
     margin-bottom: 1rem;
     width: 70%;
     float: left;
+}
+
+.chatbox .container {
+  margin-bottom:80px
+}
+
+form#new_message {
+    display: flex;
 }
 
 .convo {
@@ -80,6 +88,7 @@ a.playdate_invite {
   color: white;
   font-weight:bold;
   transition: .3s;
+  display:none;
 }
 a.playdate_invite:hover {
   background:#8bf100;
@@ -100,3 +109,81 @@ a.playdate_invite img {
   margin: 28px auto 3px auto;
 }
 
+
+#chat-profile {
+    height: 100%;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #232323;
+    overflow-x: hidden;
+    padding: 140px 30px 30px 30px;
+
+
+}
+
+
+
+
+.chatopen {
+  width: 350px;
+  left: 300px;
+
+}
+
+.chatclosed {
+  left: 14px;
+  width: 350px;
+}
+
+.chatclosed a.userlink {
+  display:none;
+}
+
+
+#chat-profile a {
+    color: inherit;
+    text-decoration: none;
+}
+#chat-profile .usercards{
+  -webkit-box-shadow: 0px 0px 33px 0px black;
+  -moz-box-shadow: 0px 0px 33px 0px black;
+  box-shadow: 0px 0px 33px 0px black;
+
+}
+#chat-profile .card-image {
+  background-size:cover;
+  height:200px;
+  transition: .3s;
+}
+
+.chatprofnav {
+    position: absolute;
+    right: 17px;
+    top: 90px;
+}
+
+.chatprofnav a {
+    font-size:30px;
+    color: #b3b3b3;
+}
+
+.chatprofnav a:hover {
+    font-size:30px;
+    color: #8cd923;
+}
+
+#contentchat .form {
+  left:650px;
+  padding:30px;
+
+}
+
+.chatcontentclosed {
+  margin-left: 364px !important;
+}
+
+.chatcontentclosed .form {
+left: 360px !important;
+}

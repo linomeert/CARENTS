@@ -17,29 +17,55 @@
         <% end %>
       </ul>
     <% end %>
-
 </div>
-  <div class="main chat">
+
+<div id="chat-profile" class="chatopen">
+  <div class="chatprofnav">
+    <a id="openclose" href="#"></a>
+  </div>
+  <% convo_user = @conversation.users.reject {|user| user == current_user}.first %>
+  <%= link_to user_path(id: convo_user.id), class: "userlink" do %>
+    <div class="usercards">
+      <div class="card-image" style="background-image:url(<%= convo_user.photo %>)">
+        <span class="viewprofile">View profile</span>
+      </div>
+      <div class="userbio">
+         <h4><%= convo_user.last_name %> family</h4>
+         <p><%= convo_user.address %></p>
 
 
-      <% if @conversations.empty? %>
-        <div class="container"><p>It's blank here!</p></div>
-      <% else %>
+      </div>
+      <div class="card-footer">
+       <div class="kid_count">
+         <% convo_user.children.count.times do %>
+           <i class="fas fa-child"></i>
+         <% end %>
+       </div>
+       <div class="specialities">
+         <ul>
+
+           <% convo_user.children.each do |child| %>
+               <% child.conditions.each do |condition| %>
+                 <li><%= condition.name %></li>
+               <% end %>
+           <% end %>
+         </ul>
+       </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div id="contentchat" class="main chat chatcontentopen">
+  <div class="chatbox">
+    <% if @conversations.empty? %>
+      <div class="container"><p>It's blank here!</p></div>
+    <% else %>
       <div id="conversation-container" data-current-user="<%= current_user.username %>" data-conversation-id="<%= @conversation.id %>">
         <%= render "show", messages: @messages, conversation: @conversation %>
       </div>
-      <% end %>
-
-    <div class="form">
-
-      <% if @conversations.empty? %>
-
-      <% else  %>
-        <!-- render '/messages/form', message: Message.new, conversation: @conversation, user: @current_user  -->
-
-
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
+
 

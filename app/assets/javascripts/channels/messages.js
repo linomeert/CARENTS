@@ -8,10 +8,14 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
     $("#messages").removeClass('hidden')
     console.log(data)
     return $('#messages').append(this.renderMessage(data));
+
   },
 
 
   renderMessage: function(data) {
+    window.scrollTo(0,document.querySelector("ul.chat").scrollHeight);
+
+
     var currentUser = document.cookie
     console.log(currentUser)
     console.log("username=" + data.user)

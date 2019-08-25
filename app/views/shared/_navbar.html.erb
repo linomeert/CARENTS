@@ -1,3 +1,4 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <% if current_page?(root_path) %> transparant <% end %>">
   <%= link_to root_path, class: "navbar-brand" do %>
     <h2 class="logo">Carents</h2>
@@ -14,8 +15,26 @@
         <li class="nav-item">
           <%= link_to "Dashboard", playdates_index_path(current_user),  class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", conversations_path(current_user) , class: "nav-link" %>
+        <li class="nav-item messages" >
+          <% unread_user_messages = [] %>
+          <% my_conversations = current_user.conversations.eager_load(:messages) %>
+          <% my_conversations.each do |conv| %>
+            <% conv.messages.each do |message| %>
+              <% unread_user_messages << message if message.readat == nil %>
+            <% end %>
+          <% end %>
+
+
+
+
+          <%= link_to conversations_path(current_user) , class: "nav-link" do %>
+            Messages
+            <% if not unread_user_messages.empty? %>
+              <span class="notification"><%= unread_user_messages.count %></span>
+            <% end %>
+          <% end %>
+
+
         </li>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user&.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

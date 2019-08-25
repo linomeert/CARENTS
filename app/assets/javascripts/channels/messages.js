@@ -8,10 +8,14 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
     $("#messages").removeClass('hidden')
     console.log(data)
     return $('#messages').append(this.renderMessage(data));
+
   },
 
 
   renderMessage: function(data) {
+    window.scrollTo(0,document.querySelector("ul.chat").scrollHeight);
+
+
     var currentUser = document.cookie
     console.log(currentUser)
     console.log("username=" + data.user)
@@ -20,7 +24,7 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
       return "<div class='convo'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + data.user + "</span> </div> </div>";
     }
     else {
-      return "<div class='convo message-received'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + data.user + "</span> </div> </div>";
+      return "<div class='convo message-received'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + "just now" + "</span> </div> </div>";
     }
 
   }

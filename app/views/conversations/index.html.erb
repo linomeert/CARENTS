@@ -1,10 +1,14 @@
+
+
+
 <div class="sidenav">
     <% if @conversations.empty? %>
       <p>No conversations yet!</p>
     <% else %>
       <ul>
         <% @conversations.each do |conversation| %>
-          <li class="<%= conversation.id.to_s == params[:conversation_id.to_s] ? 'active' : 'nonactiv' %>">
+          <% unread_messages = conversation.messages.select { |message|  message.readat == nil && message.sender != current_user } %>
+          <li class="chatprofilebox <%= conversation.id.to_s == params[:conversation_id.to_s] ? 'active' : 'nonactiv' %>">
               <%= link_to conversations_path(conversation_id: conversation.id), class: "chatlink" do %>
                 <% conversation.users.each do |user| %>
                   <% if user != current_user %>
@@ -12,14 +16,18 @@
                     <p><strong><%= user.last_name %></strong> family</p>
                   <% end %>
                 <% end %>
+                <% if not unread_messages.empty? %>
+                <div class="notification"><%= unread_messages.count %></div>
+                <% end %>
               <% end %>
+
           </li>
         <% end %>
       </ul>
     <% end %>
 </div>
 
-<div id="chat-profile" class="chatopen">
+<div id="chat-profile" class="chatclosed">
   <div class="chatprofnav">
     <a id="openclose" href="#"></a>
   </div>
@@ -56,12 +64,13 @@
   <% end %>
 </div>
 
-<div id="contentchat" class="main chat chatcontentopen">
+<div id="contentchat" class="main chat chatcontentclosed">
   <div class="chatbox">
     <% if @conversations.empty? %>
       <div class="container"><p>It's blank here!</p></div>
     <% else %>
       <div id="conversation-container" data-current-user="<%= current_user.username %>" data-conversation-id="<%= @conversation.id %>">
+
         <%= render "show", messages: @messages, conversation: @conversation %>
       </div>
     <% end %>

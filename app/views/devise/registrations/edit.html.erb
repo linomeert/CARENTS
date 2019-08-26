@@ -11,7 +11,11 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
-
+        <%= f.input :first_name, :label => "What's your name ?" %>
+        <%= f.input :last_name, :label => "What's your family name ?"  %>
+        <%= f.input :biography, :label => "Tell us more about your familly"  %>
+        <%= f.input :username, :label => "What's your username ?"  %>
+        <%= f.input :address, :label => "What's your localisation ?"  %>
       <%= f.input :password,
                   hint: "leave it blank if you don't want to change it",
                   required: false,

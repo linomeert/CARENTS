@@ -43,11 +43,12 @@ h1 span {
     margin-bottom:20px;
 }
 .buttons {
-  margin:20px 0px;
+  margin:10px 0px;
 }
+
 .profile-image {
-    width: 100%;
-    padding-bottom:100%;
+    width: 80%;
+    padding-bottom: 80%;
     background-size: cover;
     background-position: center;
     border-radius: 100%;
@@ -55,6 +56,7 @@ h1 span {
     -webkit-box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
     -moz-box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
     box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
+    margin: 0 auto;
 }
 
 ul.interestlist {
@@ -68,4 +70,66 @@ ul.interestlist {
 
 .profile {
   padding:40px 0px;
+}
+
+///////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+.profile-container {
+  width: 100%;
+  margin-top: 72px;
+  .cover-profile {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+
+    .edit-cover-button {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      font-size: .8em;
+      background: #20d029ab;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+        img {
+          width: 75%;
+        }
+
+    }
+  }
+}
+.profile-nav {
+  margin-top: -200px;
+  z-index: 1;
+  position: relative;
+}
+.profile-detail {
+  margin-top: 135px;
+  padding-left: 75px;
+}
+
+.centercontent {
+  text-align: center;
+}
+.banner-form-modal{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: white;
+  z-index: 3;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  }
+.show-form{
+  display: inherit !important;
+
 }

@@ -1,3 +1,5 @@
+console.log("hello")
+
 const toggleBtn = document.getElementById("openclose");
 
 

@@ -12,15 +12,23 @@
         <li class="nav-item">
           <%= link_to "Families", parents_path(current_user) , class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Dashboard", playdates_index_path(current_user),  class: "nav-link" %>
+        <li class="nav-item messages">
+          <% playdates_requests = Playdate.where(receiver_id: current_user.id, status: nil) %>
+
+          <%= link_to dashboard_upcoming_playdates_path,  class: "nav-link" do %>
+          Dashboard
+            <% if not playdates_requests.empty? %>
+              <span class="notification"><%= playdates_requests.count %></span>
+            <% end %>
+          <% end %>
+
         </li>
         <li class="nav-item messages" >
           <% unread_user_messages = [] %>
           <% my_conversations = current_user.conversations.eager_load(:messages) %>
           <% my_conversations.each do |conv| %>
             <% conv.messages.each do |message| %>
-              <% unread_user_messages << message if message.readat == nil %>
+              <% unread_user_messages << message if message.readat == nil && message.sender != current_user %>
             <% end %>
           <% end %>
 

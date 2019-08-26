@@ -15,13 +15,10 @@ App[`conversation_${conversationId}`] = App.cable.subscriptions.create(
   renderMessage: function(data) {
     window.scrollTo(0,document.querySelector("ul.chat").scrollHeight);
 
-
-    var currentUser = document.cookie
     console.log(currentUser)
-    console.log("username=" + data.user)
 
     if (currentUser === data.user) {
-      return "<div class='convo'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + data.user + "</span> </div> </div>";
+      return "<div class='convo'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + "just now" + "</span> </div> </div>";
     }
     else {
       return "<div class='convo message-received'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + "just now" + "</span> </div> </div>";

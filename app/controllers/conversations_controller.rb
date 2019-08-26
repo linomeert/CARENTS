@@ -22,7 +22,7 @@ class ConversationsController < ApplicationController
 
     #checking if conversations with user already exist
     # redirecting to conversation with user
-   @existing_conversation = @conversations.detect{|convo|  convo.users.map(&:id).include? @user.id }
+    @existing_conversation = @conversations.detect{|convo|  convo.users.map(&:id).include? @user.id }
     if @existing_conversation
     redirect_to conversations_path(conversation_id:  @existing_conversation)
     return

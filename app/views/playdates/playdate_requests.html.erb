@@ -2,14 +2,16 @@
   <%= render 'sidenav' %>
 </div>
 <div class="main">
+  <%= render 'notification_bar_accepted.html.erb' %>
+
   <div class="container">
-    <div class="contentblok" id="upcoming">
-      <h2>Upcoming Playdates</h2>
+    <div class="contentblok" id="dash">
+      <h1>Playdate Requests</h1>
       <div class="playdategrid">
-        <% if @playdates_upcoming.empty? %>
-          <p>No upcoming playdates. Find a playdate!</p>
+        <% if @playdates_requests.empty? %>
+          <p>No playdate requests. Invite someone!</p>
         <% else %>
-          <% @playdates_upcoming.each do |playdate| %>
+          <% @playdates_requests.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
           <% receiver = User.find(playdate.receiver_id) %>
             <div class="pl-block">
@@ -20,13 +22,26 @@
                 </div>
                 <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
                 <p><%= playdate.description %></p>
+                <div class="acceptreject">
+
+                  <%= link_to dashboard_playdate_requests_accept_path(id: playdate.id), class:"acceptplaydate" do %>
+                     <i class="fas fa-check"></i>
+                  <% end %>
+
+                  <%= link_to dashboard_playdate_requests_reject_path(id: playdate.id), class:"rejectplaydate" do %>
+                     <i class="fas fa-plus"></i>
+                  <% end %>
+                </div>
               </div>
               <div class="footerbox">
                 <div class="date">
                   <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
                 </div>
                 <div class="options">
-
+                  <% common_covo = (receiver.conversations & inviter.conversations).first %>
+                  <%= link_to conversations_path(conversation_id: common_covo.id), class: "chatlink" do %>
+                      <i class="fas fa-comments"></i>
+                  <% end %>
                   <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
                      <i class="fas fa-trash-alt"></i>
                   <% end %>

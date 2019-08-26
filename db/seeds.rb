@@ -8,11 +8,14 @@
 
 
 puts "creating interests"
-
+Message.destroy_all
+Conversation.destroy_all
+Playdate.destroy_all
 Interest.destroy_all
 User.destroy_all
 Condition.destroy_all
 Child.destroy_all
+
 
 
 
@@ -308,6 +311,18 @@ louis = User.create(
 
 )
 
+lino = User.create(
+    first_name: "Lino",
+    last_name: "Meert",
+    email: "lino.meert@gmail.com",
+    password:"blablabla",
+    username: "linomeert",
+    address: "Saint-Gilles",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566335097/fwt8bmnqukp8k5mnc2fn.png",
+    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+)
+
 
 tom.save!
 john.save!
@@ -430,5 +445,123 @@ puts "connecting children interests"
 
 
 
+playdate_pending_1 = Playdate.create(
+      location: "Park de Forest",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("31/08/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: fien
+)
 
 
+
+playdate_pending_2 = Playdate.create(
+      location: "Hallerbos",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("30/08/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: louis
+)
+playdate_pending_3 = Playdate.create(
+      location: "Saint Chatherine, Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("1/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: tom
+)
+
+
+playdate_pending_1.save!
+playdate_pending_2.save!
+playdate_pending_3.save!
+
+playdate_upcoming_1 = Playdate.create(
+      location: "Parvis",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: true,
+      date: DateTime.strptime("2/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: liesa,
+      receiver: lino
+)
+
+
+playdate_upcoming_2 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: true,
+      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: john
+)
+
+playdate_upcoming_3 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: true,
+      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: sarah
+)
+
+
+playdate_upcoming_1.save!
+playdate_upcoming_2.save!
+playdate_upcoming_3.save!
+
+playdate_past_1 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: true,
+      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: lino,
+      receiver: patricia
+)
+
+playdate_past_2 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: true,
+      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: tomas,
+      receiver: lino
+)
+
+
+playdate_past_1.save!
+playdate_past_2.save!
+
+
+playdate_toaccept_1 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("6/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: fien,
+      receiver: lino
+)
+
+
+playdate_toaccept_2 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("4/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: pieter,
+      receiver: lino
+)
+
+playdate_toaccept_3 = Playdate.create(
+      location: "Brussels",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      status: nil,
+      date: DateTime.strptime("5/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      inviter: tomas,
+      receiver: lino
+)
+
+playdate_toaccept_1.save!
+playdate_toaccept_2.save!
+playdate_toaccept_3.save!

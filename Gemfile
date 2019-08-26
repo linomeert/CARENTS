@@ -15,10 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'puma'
 gem 'time_difference'
-
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -37,3 +34,4 @@ end
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
+gem 'active_link_to'

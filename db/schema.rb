@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_080048) do
+
+ActiveRecord::Schema.define(version: 2019_08_26_134834) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_080048) do
     t.bigint "receiver_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "notified_acceptance"
     t.index ["inviter_id"], name: "index_playdates_on_inviter_id"
     t.index ["receiver_id"], name: "index_playdates_on_receiver_id"
   end

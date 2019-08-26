@@ -1,0 +1,18 @@
+<% accepted = @playdates_upcoming.where(notified_acceptance: nil, status: true, ).where.not(receiver_id: current_user.id) %>
+<% if not accepted.empty? %>
+
+
+  <div class="notification-bar accepted-playdate">
+    <ul>
+      <% accepted.each do |playdate| %>
+        <li>
+          😃 The <strong><%= playdate.receiver.last_name %></strong> family accepted your playdate invite!
+          <%= link_to dashboard_playdate_requests_notified_acceptance_path(id: playdate.id), class:"notified_acceptance" do %>
+           <i class="fas fa-plus"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

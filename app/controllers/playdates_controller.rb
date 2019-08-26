@@ -3,11 +3,9 @@ class PlaydatesController < ApplicationController
   before_action :set_playdate_requests_upcoming, only: [:upcoming_playdates, :playdate_requests, :pending_playdates, :past_playdates, :notified_acceptance]
 
   def index
-    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
   end
 
   def upcoming_playdates
-    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
   end
 
   def playdate_requests
@@ -78,8 +76,8 @@ class PlaydatesController < ApplicationController
 
   def set_playdate_requests_upcoming
     @playdates_requests = Playdate.where(receiver_id: current_user.id, status: nil)
-    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
-    @playdates_rejected = Playdate.all.where("date > ? AND inviter_id = ? AND status = ?", DateTime.now, current_user, false)
+    @playdates_upcoming = Playdate.all.where(status: true).where("date > ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, current_user, current_user)
+    @playdates_rejected = Playdate.all.where(status: false).where("date > ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, current_user, current_user)
 
   end
 

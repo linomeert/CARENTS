@@ -1,6 +1,6 @@
 <% accepted = @playdates_upcoming.where(notified_acceptance: nil, status: true, ).where.not(receiver_id: current_user.id) %>
 <% if not accepted.empty? %>
-<%= raise %>
+
 
   <div class="notification-bar accepted-playdate">
     <ul>

@@ -30,6 +30,7 @@
     border-bottom: 1px solid #232323;
     padding: 12px 20px;
     justify-content: space-between;
+    color: #afafaf;
 }
 
 
@@ -148,3 +149,7 @@ a.acceptplaydate:hover, a.rejectplaydate:hover {
   }
 }
 
+a.dashboard-nav.active {
+    background: #242424;
+    color: white;
+}

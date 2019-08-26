@@ -19,6 +19,8 @@
   color: white;
   display: block;
   width: 100%;
+  color: #afafaf;
+
 
 }
 
@@ -29,8 +31,12 @@
     align-items: center;
     border-bottom: 1px solid #232323;
     padding: 12px 20px;
+
 }
 
+li.chatprofilebox.active a p{
+  color:white;
+}
 
 .sidenav ul {
   list-style: none;
@@ -47,7 +53,7 @@ li.active .avatar-large {
 
 
 .sidenav p {
-    color: white;
+    color: #afafaf;
     margin-bottom: 0px;
     margin-left: 20px;
     margin-top:-10px;

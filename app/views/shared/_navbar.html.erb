@@ -28,7 +28,7 @@
           <% my_conversations = current_user.conversations.eager_load(:messages) %>
           <% my_conversations.each do |conv| %>
             <% conv.messages.each do |message| %>
-              <% unread_user_messages << message if message.readat == nil %>
+              <% unread_user_messages << message if message.readat == nil && message.sender != current_user %>
             <% end %>
           <% end %>
 

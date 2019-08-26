@@ -1,0 +1,43 @@
+.notification-bar  {
+    color: white;
+    width: 100%;
+    margin-top: 71px;
+    padding: 20px;
+    position:fixed;
+    top:0;
+    opacity:.9;
+    z-index:9999;
+
+    h4 {
+      color:white;
+    }
+
+    p {
+      margin:0px;
+    }
+    ul {
+      list-style: none;
+      padding:0px;
+
+      li {
+        margin:10px 0px;
+      }
+
+    }
+    .notified_acceptance {
+      color:white;
+
+      i {
+        transform: rotate(45deg);
+      }
+    }
+}
+
+
+.accepted-playdate {
+  background: linear-gradient(135deg, #8cd923 0%, #cde002 100%);
+}
+
+.rejected-playdate {
+  background: red;
+}

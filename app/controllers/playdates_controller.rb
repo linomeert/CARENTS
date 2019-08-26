@@ -1,16 +1,42 @@
 class PlaydatesController < ApplicationController
-  before_action :set_playdate, only: [:show, :edit, :update, :destroy]
+  before_action :set_playdate, only: [:show, :edit, :update, :destroy, :accept_playdate, :reject_playdate, :notified_acceptance]
+  before_action :set_playdate_requests_upcoming, only: [:upcoming_playdates, :playdate_requests, :pending_playdates, :past_playdates, :notified_acceptance]
 
   def index
-
-    @playdates = Playdate.all
-    @playdates_to_accept = Playdate.all.where('receiver_id': current_user, 'status': nil)
-    @playdates_pending = Playdate.all.where("date > ? AND status = ? AND inviter_id = ?", DateTime.now, nil, current_user )
-
     @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
-    @playdates_past = Playdate.all.where("date < ? AND inviter_id = ? OR receiver_id = ? AND status = ?", DateTime.now, current_user, current_user, true)
-    @playdates_rejected = Playdate.all.where("date > ? AND inviter_id = ? AND status = ?", DateTime.now, current_user, false)
+  end
 
+  def upcoming_playdates
+    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
+  end
+
+  def playdate_requests
+  end
+
+  def pending_playdates
+    @playdates_pending = Playdate.where(inviter_id: current_user.id, status: nil)
+  end
+
+  def past_playdates
+    @playdates_past = Playdate.all.where("date < ? AND inviter_id = ? OR receiver_id = ? AND status IS ?", DateTime.now, current_user.id, current_user.id, true)
+  end
+
+  def accept_playdate
+    @playdate.status = true
+    @playdate.save
+    redirect_to dashboard_playdate_requests_path
+  end
+
+  def reject_playdate
+    @playdate.status = false
+    @playdate.save
+    redirect_to dashboard_playdate_requests_path
+  end
+
+  def notified_acceptance
+    @playdate.notified_acceptance = true
+    @playdate.save
+    redirect_to dashboard_upcoming_playdates_path
   end
 
   def edit
@@ -43,8 +69,18 @@ class PlaydatesController < ApplicationController
     redirect_to playdates_index_path
   end
 
+  private
+
   def set_playdate
     @playdate = Playdate.find(params[:id])
+  end
+
+
+  def set_playdate_requests_upcoming
+    @playdates_requests = Playdate.where(receiver_id: current_user.id, status: nil)
+    @playdates_upcoming = Playdate.all.where("date > ? AND status = ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, true, current_user, current_user, )
+    @playdates_rejected = Playdate.all.where("date > ? AND inviter_id = ? AND status = ?", DateTime.now, current_user, false)
+
   end
 
   def playdate_params

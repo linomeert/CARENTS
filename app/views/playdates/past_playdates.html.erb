@@ -2,14 +2,16 @@
   <%= render 'sidenav' %>
 </div>
 <div class="main">
+  <%= render 'notification_bar_accepted.html.erb' %>
+
   <div class="container">
-    <div class="contentblok" id="upcoming">
-      <h2>Upcoming Playdates</h2>
+    <div class="contentblok" id="dash">
+      <h1>Past Playdates</h1>
       <div class="playdategrid">
-        <% if @playdates_upcoming.empty? %>
-          <p>No upcoming playdates. Find a playdate!</p>
+        <% if @playdates_past.empty? %>
+          <p>No past playdates yet!</p>
         <% else %>
-          <% @playdates_upcoming.each do |playdate| %>
+          <% @playdates_past.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
           <% receiver = User.find(playdate.receiver_id) %>
             <div class="pl-block">
@@ -26,7 +28,10 @@
                   <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
                 </div>
                 <div class="options">
-
+                  <% common_covo = (receiver.conversations & inviter.conversations).first %>
+                  <%= link_to conversations_path(conversation_id: common_covo.id), class: "chatlink" do %>
+                      <i class="fas fa-comments"></i>
+                  <% end %>
                   <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
                      <i class="fas fa-trash-alt"></i>
                   <% end %>

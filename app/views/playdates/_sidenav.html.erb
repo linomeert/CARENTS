@@ -1,0 +1,11 @@
+  <%= link_to "My Upcoming playdates", dashboard_upcoming_playdates_path, class: "dashboard-nav" %>
+  <%= link_to dashboard_playdate_requests_path, class: "dashboard-nav"  do %>
+    <span>Playdate Requests</span>
+    <% if  @playdates_requests  %>
+      <% if not @playdates_requests.empty?  %>
+      <div class="notification"><%= @playdates_requests.count %></div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= link_to "My Pending Playdates", dashboard_pending_playdates_path, class: "dashboard-nav" %>
+  <%= link_to "My Past Playdates", dashboard_past_playdates_path, class: "dashboard-nav" %>

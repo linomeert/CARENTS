@@ -22,6 +22,17 @@
 
 }
 
+.sidenav.dashboard a{
+
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    border-bottom: 1px solid #232323;
+    padding: 12px 20px;
+    justify-content: space-between;
+}
+
+
 .pl-block {
     background: white;
     border-radius: 4px;
@@ -47,12 +58,82 @@
     background: linear-gradient(135deg, #8cd923 0%,#cde002 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cd923', endColorstr='#cde002',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color:white;
+    align-items: center;
 
 
 }
 
+
+a.rejectplaydate {
+    background:red;
+    color:white;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-decoration:none;
+    transition: .5s;
+}
+
+a.acceptplaydate {
+  background:#91d921;
+  color:white;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  text-decoration:none;
+  transition: .5s;
+  margin-right:5px;
+}
+
+a.acceptplaydate:hover, a.rejectplaydate:hover {
+  text-decoration:none;
+  transform: rotate(360deg);
+}
 .footerbox a {
   color:white;
+}
+
+.acceptreject {
+    display: flex;
+}
+
+.footerbox a {
+  height:40px;
+  width:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:2px solid white;
+  border-radius:50%;
+  transition: .3s;
+  margin:0px 3px;
+}
+
+.footerbox a:hover {
+  background:white;
+
+  i {
+    color:#8cd923;
+  }
+}
+
+.options {
+  display:flex;
+}
+
+.footerbox a i{
+  font-size:17px;
+}
+
+.sidenav.dashboard {
+  justify-content: space-between;
+
 }
 
 @media(max-width: 992px) {

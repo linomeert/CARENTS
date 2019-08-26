@@ -26,4 +26,16 @@ class UsersController < ApplicationController
     @playdates = Playdate.all.where("inviter_id = ? OR receiver_id = ?", @user, @user)
 
   end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    @user.save
+    redirect_to user_path(current_user)
+  end
+
+  def user_params
+  params.require(:user).permit(:bannerphoto)
+  end
+
 end

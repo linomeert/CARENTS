@@ -1,9 +1,87 @@
+<div id="banner-profile-form"class="banner-form-modal">
+  <%= simple_form_for(@user) do |f| %>
+    <%= f.input :bannerphoto %>
+    <%= f.input :bannerphoto_cache, as: :hidden %>
+    <%= f.button :submit, "Add", class: "btn btn-flat" %>
 
+  <% end %>
+</div>
+
+<div class="profile-container">
+  <div
+    class="cover-profile"
+    style="background-image: url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
+      >
+
+      <div id="toggle-form" class="edit-cover-button"><%= image_tag "photo-add.png"%></div>
+  </div>
+    <div class="profile-nav">
+    <div class="container" >
+      <div class="row">
+        <div class="col-sm-100 col-md-4 centercontent">
+          <div class="profile-image" style="background-image:url(<%= @user.photo %>)"></div>
+           <div class="buttons">
+            <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
+                <i class="fas fa-comments"></i> Chat to request playdate
+            <% end %>
+          </div>
+          <div class="buttons">
+            <%= link_to edit_user_registration_path, class: "btn btn-danger" do %>
+                <i class="fas fa-edit"></i></i> Edit your profile
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-100 col-md-8">
+        <div class="profile-detail">
+          <ul class="nav nav-tabs">
+            <li><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
+            <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
+            <li><a data-toggle="tab" href="#menu2">Details</a></li>
+          </ul>
+          <div class="tab-content">
+            <div id="home" class="tab-pane fade in active show">
+             <h5>About <strong><%= @user.first_name %></strong></h5>
+              <p> <%= @user.biography %></p>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+               <% @user.children.each do |child| %>
+                    <h5>About <strong><%= child.name %></strong></h5>
+                    <p><%= child.biography %></p>
+                    <ul class="interestlist">
+                    <% child.interests.each do |interest| %>
+                      <li>
+                        <img src="<%= interest.photo %>" alt="Smiley face" height="42" width="42">
+                        <p><%= interest.name %></p>
+                      </li>
+                    <% end %>
+                  </ul>
+                <% end %>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+               <% @user.children.each do |child| %>
+                    <h5>Details</h5>
+                    <% child.conditions.each do |condition| %>
+                       <h6><%= condition.name %></h6>
+                       <p><%= condition.description %></p>
+                    <% end %>
+                <% end %>
+            </div>
+          </div>
+        </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+</div>
+<!--
+<div class="container">
 <%= link_to users_path, class: "btn return" do %>
     <i class="fas fa-undo"></i> Return to all Carents
 <% end %>
-
-<div class="container">
   <div class="profile">
     <div class="row">
       <div class="col-md-5">
@@ -18,16 +96,12 @@
             <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
                 <i class="fas fa-comments"></i> Chat to request playdate!
             <% end %>
-
-
-
           </div>
 
           <hr>
         </div>
         <div class="profile-detail">
           <ul class="nav nav-tabs">
-            <!-- add data-toggle attribute to the anchors -->
             <li class="active"><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
             <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
             <li><a data-toggle="tab" href="#menu2">Details</a></li>
@@ -87,4 +161,4 @@
     </div>
   </div>
 </div>
-
+-->

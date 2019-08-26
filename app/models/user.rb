@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
-
+  mount_uploader :bannerphoto, PhotoUploader
   def display_name
     "#{last_name}"
   end

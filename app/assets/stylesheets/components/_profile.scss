@@ -87,7 +87,7 @@ ul.interestlist {
     .edit-cover-button {
       position: absolute;
       right: 20px;
-      top: 20px;
+      bottom: 20px;
       height: 40px;
       width: 40px;
       border-radius: 50%;
@@ -96,6 +96,7 @@ ul.interestlist {
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 2;
 
         img {
           width: 75%;

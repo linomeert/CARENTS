@@ -2,8 +2,7 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 230px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url("banner.jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
 }
 
 img.iconimg {
@@ -52,6 +51,68 @@ img.img {
     object-fit: cover;
     background-position: center;
 }
+
 .homepage .row {
   padding:40px 0px;
+}
+
+.carousel-inner .photobooth {
+  position: absolute;
+  z-index: 6;
+  width: 275px;
+  top: -60px;
+  left: -20px;
+  transform: translate(20px, -426px) rotate(0);
+  transition: transform .5s;
+  &:hover {
+
+  }
+  &.show {
+    transform: rotate(-7deg);
+  }
+}
+
+.carousel-inner{
+  height: 60vw;
+  overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-inner:after {
+  content: "";
+  background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+  top:0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  position:absolute;
+}
+.carousel-item {
+background-color: gray;
+}
+
+.banner-content {
+  position: absolute;
+  top: 37%;
+  bottom: 0;
+    z-index: 6;
+    left: 0;
+    right: 0;
+    width: 45%;
+    height: 100px;
+    margin: 0 auto;
+    text-align: left;
+    h1 {
+    color: white;
+    font-size: 54pt;
+    }
+    h3 {
+    color: white;
+    font-size: 26pt;
+    }
 }

@@ -14,7 +14,7 @@ h2.logo {
     -webkit-box-pack: justify;
     justify-content: space-between;
     background: white;
-    z-index: 9999;
+    z-index: 5;
     position: fixed;
     top: 0;
     left: 0;
@@ -42,9 +42,14 @@ h2.logo {
   right: 0;
   left: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 5;
   background: #00000000;
   border: 0px;
+  justify-content: flex-end;
+   .navbar-brand{
+    visibility: hidden;
+   }
+
 }
 
 .transparant a.nav-link{

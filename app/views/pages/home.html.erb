@@ -1,9 +1,25 @@
-<div class="notexture">
-  <div class="banner">
-  <div class="container">
-    <h1 style="margin-bottom:10px;">Everyone deservers a friend</h1>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="banner-content">
+      <h1>Carents</h1>
+      <h3>Everyone deserves friendship</h3>
+        <% if current_user == @user %>
+        <%= link_to "Join us", user_session_path, class: "btn btn-flat" %>
+      <% end %>
+    </div>
 
-    <%= link_to "Join us", user_session_path, class: "btn btn-flat" %>
+    <div class="carousel-inner">
+   <%= image_tag "photobooth.png", class: "photobooth show" %>
+      <div class="carousel-item active">
+          <%= image_tag "banner.jpg", :class => "d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "banner1.jpg", :class => "d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "banner2.jpg", :class => "d-block w-100" %>
+      </div>
+      </div>
+    </div>
   </div>
 </div>
 

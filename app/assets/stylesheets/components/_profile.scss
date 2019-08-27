@@ -137,6 +137,21 @@ ul.interestlist {
   text-align: center;
 }
 
+.banner-form-modal{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background: white;
+  z-index: 3;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  }
+.show-form{
+  display: inherit !important;
+
 .review {
     background: white;
     border-radius: 3px;
@@ -159,4 +174,5 @@ ul.interestlist {
 
 .profile-nav .btn-secondary {
   margin-top:10px;
+
 }

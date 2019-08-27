@@ -2,6 +2,7 @@ const togglePopupBtn = document.getElementById("toggle-popup");
 
 if (togglePopupBtn) {
 
+
   const closePopup = document.getElementById("close-popup");
   const blackout = document.getElementById("blackout");
 

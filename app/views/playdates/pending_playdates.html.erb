@@ -1,0 +1,47 @@
+<div class="sidenav dashboard">
+  <%= render 'sidenav' %>
+</div>
+<div class="main">
+  <%= render 'notification_bar_accepted.html.erb' %>
+
+  <div class="container">
+    <div class="contentblok" id="dash">
+      <h1>Pending Playdates</h1>
+      <div class="playdategrid">
+        <% if @playdates_pending.empty? %>
+          <p>No pending playdates. Find a playdate!</p>
+        <% else %>
+          <% @playdates_pending.each do |playdate| %>
+          <% inviter = User.find(playdate.inviter_id) %>
+          <% receiver = User.find(playdate.receiver_id) %>
+            <div class="pl-block">
+              <div class="playcontent">
+                <div class="avatars">
+                  <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
+                  <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
+                </div>
+                <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
+                <p><%= playdate.description %></p>
+              </div>
+              <div class="footerbox">
+                 <div class="date">
+                   <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
+                 </div>
+                 <div class="options">
+                   <% common_covo = (receiver.conversations & inviter.conversations).first %>
+                   <%= link_to conversations_path(conversation_id: common_covo.id), class: "chatlink" do %>
+                       <i class="fas fa-comments"></i>
+                   <% end %>
+                   <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
+                      <i class="fas fa-trash-alt"></i>
+                   <% end %>
+
+                 </div>
+               </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

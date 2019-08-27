@@ -1,4 +1,4 @@
-<div id="banner-profile-form"class="banner-form-modal">
+<div id="banner-profile-form" class="banner-form-modal">
   <%= simple_form_for(@user) do |f| %>
     <%= f.input :bannerphoto %>
     <%= f.input :bannerphoto_cache, as: :hidden %>
@@ -13,7 +13,7 @@
     style="background-image: url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
       >
 
-      <div id="toggle-form" class="edit-cover-button"><%= image_tag "photo-add.png"%></div>
+      <a href="#" id="toggle-form" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
   </div>
     <div class="profile-nav">
     <div class="container" >

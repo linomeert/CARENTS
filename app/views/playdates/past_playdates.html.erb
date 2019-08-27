@@ -1,3 +1,4 @@
+
 <div class="sidenav dashboard">
   <%= render 'sidenav' %>
 </div>
@@ -14,14 +15,35 @@
           <% @playdates_past.each do |playdate| %>
           <% inviter = User.find(playdate.inviter_id) %>
           <% receiver = User.find(playdate.receiver_id) %>
+
             <div class="pl-block">
               <div class="playcontent">
                 <div class="avatars">
                   <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
                   <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
                 </div>
+
                 <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
                 <p><%= playdate.description %></p>
+                <% reviews_by_me = [] %>
+                <% playdate.reviews.each do |review| %>
+                  <% reviews_by_me << review.user if review.user != current_user %>
+                <% end %>
+
+                <% if reviews_by_me.empty? %>
+                  <% if current_user == inviter %>
+                    <%= link_to new_user_playdate_review_path(user_id: receiver.id, playdate_id: playdate.id), class: "reviewlink" do %>
+                      Write in guestbook
+                    <% end %>
+                  <% else %>
+                    <%= link_to new_user_playdate_review_path(user_id: inviter.id, playdate_id: playdate.id), class: "reviewlink" do %>
+                      Write in guestbook
+                    <% end %>
+                  <% end %>
+                <% end %>
+
+
+
               </div>
               <div class="footerbox">
                 <div class="date">

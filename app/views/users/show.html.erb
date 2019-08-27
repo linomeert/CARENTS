@@ -21,7 +21,9 @@
     style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
       >
 
-      <a href="#" id="toggle-popup" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
+      <% if current_user == @user %>
+        <a href="#" id="toggle-popup" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
+      <% end %>
   </div>
   <div class="profile-nav">
     <div class="container" >
@@ -33,9 +35,10 @@
                 <i class="fas fa-comments"></i> Chat to request playdate
             <% end %>
 
-
-            <%= link_to edit_user_registration_path, class: "btn btn-secondary" do %>
-                <i class="fas fa-edit"></i></i> Edit your profile
+            <% if current_user == @user %>
+              <%= link_to edit_user_registration_path, class: "btn btn-secondary" do %>
+                  <i class="fas fa-edit"></i></i> Edit your profile
+              <% end %>
             <% end %>
           </div>
         </div>
@@ -47,7 +50,7 @@
             <li><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
             <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
             <li><a data-toggle="tab" href="#menu2">Details</a></li>
-            <li><a data-toggle="tab" href="#menu3">Guestbook</a></li>
+            <% if not @reviews.empty? %><li><a data-toggle="tab" href="#menu3">Guestbook</a></li><% end %>
           </ul>
           <div class="tab-content">
             <div id="home" class="tab-pane fade in active show">

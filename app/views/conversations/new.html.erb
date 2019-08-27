@@ -1,6 +1,8 @@
 <div class="container">
-  <h2>Are you sure you want to start a conversation?</h2>
-  <%= simple_form_for [@user, @conversation] do |f| %>
-    <%= f.submit "Yes!", class: "btn btn-primary" %>
-  <% end %>
+  <div class="subscr-blok">
+    <h2>Are you sure you want to start a conversation?</h2>
+    <%= simple_form_for [@user, @conversation] do |f| %>
+      <%= f.submit "Yes!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

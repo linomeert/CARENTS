@@ -1,6 +1,10 @@
 <div class="container">
-
+  <% @user = User.find(params[:user_id]) %>
   <h1>Write a review</h2>
-  <%= render 'form', review: @review %>
+  <%= simple_form_for [@user, @playdate, @review] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "add a review", class: "btn btn-primary" %>
+<% end %>
 </div>
 

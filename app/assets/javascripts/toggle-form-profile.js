@@ -1,12 +1,20 @@
-const toggleProfileBtn = document.getElementById("toggle-form");
+const togglePopupBtn = document.getElementById("toggle-popup");
+
+if (togglePopupBtn) {
 
 
-if(toggleProfileBtn){
-  toggleProfileBtn.addEventListener("click", (event) => {
-    document.getElementById("banner-profile-form").classList.toggle("show-form");
+  const closePopup = document.getElementById("close-popup");
+  const blackout = document.getElementById("blackout");
+
+  togglePopupBtn.addEventListener("click", (event) => {
+    document.getElementById("blackout").classList.toggle("show-popup");
   });
+
+
+
+  closePopup.addEventListener("click", (event) => {
+    document.getElementById("blackout").classList.remove("show-popup");
+    console.log("hello man")
+  });
+
 }
-
-
-
-

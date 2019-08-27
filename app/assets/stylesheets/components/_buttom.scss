@@ -22,3 +22,29 @@ a.btn.btn-trans:hover {
     background: #acdc17;
     color: white;
 }
+
+.btn {
+  border-radius:30px;
+}
+
+.btn.btn-primary {
+  background: #4AB5FF;
+  border: 1px solid #4AB5FF;
+}
+
+.btn.btn-primary:hover {
+  background:#0184de;
+  border: 1px solid #0184de;
+}
+
+.btn.btn-secondary{
+  background:none;
+  border: 1px solid #4AB5FF;
+  color:#4AB5FF;
+}
+
+
+.btn.btn-secondary:hover{
+  background:#0184de;
+  color:white;
+}

@@ -38,6 +38,14 @@ h1 span {
 }
 
 
+.interestlist li {
+  padding:15px 15px 0px 15px;
+}
+.common {
+    border: 2px solid #20d02a;
+    border-radius: 18px;
+}
+
 .location {
     opacity: 0.4;
     margin-bottom:20px;
@@ -53,9 +61,7 @@ h1 span {
     background-position: center;
     border-radius: 100%;
     border: 4px solid white;
-    -webkit-box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
-    -moz-box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
-    box-shadow: 0px 0px 13px 0px rgba(232,232,232,1);
+
     margin: 0 auto;
 }
 
@@ -65,6 +71,7 @@ ul.interestlist {
 
   li {
     list-style-type: none;
+    text-align:center;
   }
 }
 
@@ -81,10 +88,11 @@ ul.interestlist {
   .cover-profile {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     background-size: cover;
+    background-position:center;
 
-    .edit-cover-button {
+    a.edit-cover-button {
       position: absolute;
       right: 20px;
       bottom: 20px;
@@ -92,32 +100,43 @@ ul.interestlist {
       width: 40px;
       border-radius: 50%;
       font-size: .8em;
-      background: #20d029ab;
+      background: #4ab5ff;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2;
 
         img {
-          width: 75%;
+          width: 65%;
         }
+
+    }
+
+    a.edit-cover-button:hover {
 
     }
   }
 }
 .profile-nav {
-  margin-top: -200px;
+  margin-top: -220px;
   z-index: 1;
   position: relative;
 }
 .profile-detail {
-  margin-top: 135px;
-  padding-left: 75px;
+  margin-top: 81px;
+  padding-left: 20px;
+
+  h1 {
+    margin-bottom:40px;
+    color:white;
+  }
+
 }
 
 .centercontent {
   text-align: center;
 }
+
 .banner-form-modal{
   display: none;
   position: fixed;
@@ -132,4 +151,28 @@ ul.interestlist {
   }
 .show-form{
   display: inherit !important;
+
+.review {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+
+    .post {
+      flex-grow: 2;
+      padding-left:20px;
+      padding: 20px;
+    }
+    .author {
+      padding: 20px;
+      background:linear-gradient(135deg, #8cd923 0%, #cde002 100%);
+      color:white;
+      box-shadow: 0px 0px 13px 0px #e8e8e8;
+    }
+}
+
+
+.profile-nav .btn-secondary {
+  margin-top:10px;
+
 }

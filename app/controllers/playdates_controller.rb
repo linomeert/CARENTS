@@ -51,9 +51,8 @@ class PlaydatesController < ApplicationController
     @playdate.inviter = current_user
     @playdate.receiver_id = params[:user_id]
 
-
     if @playdate.save
-      redirect_to user_path(current_user)
+      redirect_to dashboard_pending_playdates_path
     else
       render :new
     end
@@ -64,7 +63,7 @@ class PlaydatesController < ApplicationController
 
   def destroy
     @playdate.destroy
-    redirect_to playdates_index_path
+    redirect_to dashboard_upcoming_playdates_path
   end
 
   private

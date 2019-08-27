@@ -1,21 +1,29 @@
-<div id="banner-profile-form" class="banner-form-modal">
-  <%= simple_form_for(@user) do |f| %>
-    <%= f.input :bannerphoto %>
-    <%= f.input :bannerphoto_cache, as: :hidden %>
-    <%= f.button :submit, "Add", class: "btn btn-flat" %>
+<div class="banner-profile-form" id="blackout">
+  <div class="popup">
+    <div class="header">
+        <h4>Edit your header picture</h4>
+        <a id="close-popup" href="#"><i class="fas fa-plus"></i></a>
 
-  <% end %>
+    </div>
+    <div class="content">
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.input :bannerphoto %>
+        <%= f.input :bannerphoto_cache, as: :hidden %>
+        <%= f.button :submit, "Add", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="profile-container">
   <div
     class="cover-profile"
-    style="background-image: url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
       >
 
-      <a href="#" id="toggle-form" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
+      <a href="#" id="toggle-popup" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
   </div>
-    <div class="profile-nav">
+  <div class="profile-nav">
     <div class="container" >
       <div class="row">
         <div class="col-sm-100 col-md-4 centercontent">
@@ -24,19 +32,22 @@
             <%= link_to new_user_conversation_path(@user), class: "btn btn-primary" do %>
                 <i class="fas fa-comments"></i> Chat to request playdate
             <% end %>
-          </div>
-          <div class="buttons">
-            <%= link_to edit_user_registration_path, class: "btn btn-danger" do %>
+
+
+            <%= link_to edit_user_registration_path, class: "btn btn-secondary" do %>
                 <i class="fas fa-edit"></i></i> Edit your profile
             <% end %>
           </div>
         </div>
         <div class="col-sm-100 col-md-8">
         <div class="profile-detail">
+
+          <h1><%= @user.last_name %> family</h1>
           <ul class="nav nav-tabs">
             <li><a data-toggle="tab" href="#home" class="active">About the Carents</a></li>
             <li><a data-toggle="tab" href="#menu1">About the Kids</a></li>
             <li><a data-toggle="tab" href="#menu2">Details</a></li>
+            <li><a data-toggle="tab" href="#menu3">Guestbook</a></li>
           </ul>
           <div class="tab-content">
             <div id="home" class="tab-pane fade in active show">
@@ -48,14 +59,26 @@
                     <h5>About <strong><%= child.name %></strong></h5>
                     <p><%= child.biography %></p>
                     <ul class="interestlist">
-                    <% child.interests.each do |interest| %>
-                      <li>
-                        <img src="<%= interest.photo %>" alt="Smiley face" height="42" width="42">
-                        <p><%= interest.name %></p>
-                      </li>
-                    <% end %>
-                  </ul>
-                <% end %>
+
+                      <% my_kid_interests = [] %>
+                      <% current_user.children.each do |child| %>
+                      <% my_kid_interests << child.interests %>
+                      <% end %>
+
+
+                      <% child.interests.each do |interest| %>
+
+                        <% if my_kid_interests.flatten.include? interest %>
+                          <li class="common">
+                        <% else %>
+                          <li>
+                        <% end %>
+                          <img src="<%= interest.photo %>" alt="Smiley face" height="42" width="42">
+                          <p><%= interest.name %></p>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
             </div>
             <div id="menu2" class="tab-pane fade">
                <% @user.children.each do |child| %>
@@ -66,6 +89,37 @@
                     <% end %>
                 <% end %>
             </div>
+            <% if not @reviews.empty? %>
+
+              <div id="menu3" class="tab-pane fade ">
+                <h5>Guestbook</h5>
+                  <% @playdates.each do |playdate| %>
+                    <% if playdate.reviews.count >= 2  %>
+                      <div class="review">
+                        <div class="author">
+                          <% if playdate.inviter == @user %>
+                            <div class="avatar guestbook" style="background:url(<%= playdate.receiver.photo  %>)"></div>
+                            <%= playdate.receiver.first_name %>
+                          <% else %>
+                            <div class="avatar" style="background:url(<%= playdate.inviter.photo  %>)"></div>
+                            <%= playdate.inviter.first_name %>
+                          <% end %>
+                        </div>
+
+                        <div class="post">
+                          <% playdate.reviews.each do |review| %>
+                            <% if review.user == @user %>
+                              <h6><%= review.title %></h6>
+                              <p><%= review.description %></p>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </div>
+                    <% end %>
+
+                  <% end %>
+              </div>
+            <% end %>
           </div>
         </div>
 

@@ -13,6 +13,10 @@
 
 
 
+.sidenav a:hover {
+    background: #242424;
+}
+
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -20,6 +24,7 @@
   display: block;
   width: 100%;
   color: #afafaf;
+  transition:.3s;
 
 
 }

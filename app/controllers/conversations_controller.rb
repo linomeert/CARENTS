@@ -10,6 +10,8 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @messages = @conversation.messages
     @message = Message.new
+    @playdate = Playdate.new
+
   end
 
   def new

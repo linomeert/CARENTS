@@ -1,39 +1,46 @@
+<div class="" id="blackout">
+  <div class="popup">
+    <div class="header">
+      <h4>Plan a playdate!</h4>
+      <a id="close-popup" href="#"><i class="fas fa-plus"></i></a>
+    </div>
+    <div class="content">
+      <% @receiver = conversation.users.where.not(id: current_user.id).first %>
+      <% @playdate = Playdate.new %>
+      <%= render './playdates/form', :locals => { receiver: @receiver, playdate: @playdate } %>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <h1>Say hi!</h1>
 
-
-
-
-
   <% if messages %>
 
-  <ul class="chat">
-    <% messages.each do |message| %>
-    <% message.readat = DateTime.now %>
-    <% message.save %>
-      <li>
-        <div class="convo <%= current_user.id == message.sender_id ? 'message-sent' : 'message-received' %>">
-          <div>
-            <div class="chatblub">
-              <p><%= message.content %></p>
+    <ul class="chat">
+      <% messages.each do |message| %>
+      <% message.readat = DateTime.now %>
+      <% message.save %>
+        <li>
+          <div class="convo <%= current_user.id == message.sender_id ? 'message-sent' : 'message-received' %>">
+            <div>
+              <div class="chatblub">
+                <p><%= message.content %></p>
+              </div>
+              <span class="username">
+                <%= message.created_at.to_formatted_s(:short) %>
+              </span>
             </div>
-            <span class="username">
-              <%= message.created_at.to_formatted_s(:short) %>
-            </span>
           </div>
-        </div>
+        </li>
+      <% end %>
+
+      <li>
+          <div class="panel-body" id="messages"> </div>
       </li>
-    <% end %>
+    </ul>
 
-    <li>
-        <div class="panel-body" id="messages"> </div>
-    </li>
-  </ul>
-
-
-
-  <% else %>
+   <% else %>
     <p>Start a conversation!</p>
   <% end %>
 
@@ -48,13 +55,13 @@
     <div class="linkplay">
      <% @receiver = @conversation.users.where.not(id: current_user.id) %>
      <% if messages.present? %>
-       <%= link_to new_user_playdate_path(@receiver.first), class: "btn btn-success playdate_invite" do %>
-         Plan a playdate!
-         <% end %>
+        <a href="#" id="toggle-popup" class="btn btn-primary playdate_invite">Plan a playdate</a>
      <% end %>
     </div>
 
 </div>
+
+
 
 
 

@@ -12,8 +12,9 @@
     class="cover-profile"
     style="background-image: url('<%= cl_image_path @user.bannerphoto.blank? ? asset_url("parc.jpg") : @user.bannerphoto %>');"
       >
-
+     <% if current_user == @user %>
       <a href="#" id="toggle-form" class="edit-cover-button"><%= image_tag "photo-add.png"%></a>
+      <% end %>
   </div>
     <div class="profile-nav">
     <div class="container" >
@@ -26,8 +27,10 @@
             <% end %>
           </div>
           <div class="buttons">
-            <%= link_to edit_user_registration_path, class: "btn btn-danger" do %>
-                <i class="fas fa-edit"></i></i> Edit your profile
+             <% if current_user == @user %>
+            <%= link_to edit_user_registration_path , class: "btn btn-danger" do %>
+                <i class="fas fa-edit"></i> Edit your profile
+              <% end %>
             <% end %>
           </div>
         </div>

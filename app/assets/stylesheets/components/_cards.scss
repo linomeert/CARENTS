@@ -1,7 +1,7 @@
 .card-image {
     height: 250px;
     background-position: center;
-    background-size: 120%;
+    background-size: cover;
     transition:all .3s;
     width: 100%;
     display: flex;
@@ -82,7 +82,7 @@
 
 
 a:hover .usercards .card-image {
-  background-size: 170%;
+
 }
 
 a:hover .usercards .card-image:after {

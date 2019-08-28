@@ -1,8 +1,8 @@
 
 
 <%= form_for message, url: conversation_messages_path(conversation), remote: true, authenticity_token: true do |f| %>
-  <%= f.text_field :content, :as => :string, class: "form-control", data: {textfield: "message"} %>
+  <%= f.text_field :content, :as => :string, class: "form-control", id: "chatfield", data: {textfield: "message"} %>
 
   <%= f.hidden_field :conversation_id, value: conversation.id %>
-  <%= f.submit "send", class: "btn btn-secondary", style: "display", data: {send: "message"} %>
+  <%= f.submit "send", id:"chatbtn", class: "btn btn-secondary", style: "display", data: {send: "message"} %>
 <% end %>

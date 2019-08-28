@@ -197,7 +197,7 @@ tom = User.create(
     password:"password123",
     username: "Tomdedonker",
     address: "Brussels",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/lozwxlxn0ypgccjfvtuk.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/lozwxlxn0ypgccjfvtuk.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 )
 
@@ -208,7 +208,7 @@ john = User.create(
     password:"password123",
     username: "johnpeeters",
     address: "Brussels",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297376/samples/people/users/jrqc3m3ywbmmfth2w5bi.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297376/samples/people/users/jrqc3m3ywbmmfth2w5bi.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 
@@ -221,7 +221,7 @@ sarah = User.create(
     password:"password123",
     username: "Sarahdubois",
     address: "Molenbeek-Saint-Jean",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/acihmhasaqzwguxrf0cn.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/acihmhasaqzwguxrf0cn.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -233,7 +233,7 @@ patricia = User.create(
     password:"password123",
     username: "Patriciamaes",
     address: "Anderlecht",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/liowss7bgoltmxys1gxz.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/liowss7bgoltmxys1gxz.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 
@@ -246,7 +246,7 @@ pieter = User.create(
     password:"password123",
     username: "Pieterjacobs",
     address: "Brussels",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/ma6zsmthrpaexmqmni9m.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297379/samples/people/users/ma6zsmthrpaexmqmni9m.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -258,7 +258,7 @@ tomas = User.create(
     password:"password123",
     username: "tomclaes",
     address: "Dilbeek",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/ic5n2g7nrpw5thoktrc9.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297379/samples/people/users/ic5n2g7nrpw5thoktrc9.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -270,7 +270,7 @@ liesa = User.create(
     password:"password123",
     username: "liesa.dupont",
     address: " Dilbeek",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297379/samples/people/users/f10tc8tsltwjeienrah0.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297379/samples/people/users/f10tc8tsltwjeienrah0.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -282,7 +282,7 @@ ann = User.create(
     password:"password123",
     username: "Annhermans",
     address: "Anderlecht",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/l2kaaixfqu1tyyfuqrzk.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/l2kaaixfqu1tyyfuqrzk.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -290,11 +290,11 @@ ann = User.create(
 fien = User.create(
     first_name: "Fien",
     last_name: "Beckers",
-    email: "missfien@gmail.com",
-    password:"password123",
+    email: "fien@gmail.com",
+    password:"123456",
     username: "Fienbeckers",
     address: "Saint-Gilles",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297378/samples/people/users/pfza4igjvwjplwu6lbqw.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/pfza4igjvwjplwu6lbqw.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -306,19 +306,19 @@ louis = User.create(
     password:"password123",
     username: "Louisverbeke",
     address: "Uccle",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566297375/samples/people/users/muho7tltu2ymcycwj9o6.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297375/samples/people/users/muho7tltu2ymcycwj9o6.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
 
-lino = User.create(
-    first_name: "Lino",
-    last_name: "Meert",
-    email: "lino.meert@gmail.com",
-    password:"blablabla",
-    username: "linomeert",
+steven = User.create(
+    first_name: "Steven",
+    last_name: "Willems",
+    email: "steven@gmail.com",
+    password:"123456",
+    username: "stevenwillems",
     address: "Saint-Gilles",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1566335097/fwt8bmnqukp8k5mnc2fn.png",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566979671/samples/people/users/q0ne9m2zl2dy6xit5uuu.png",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 )
@@ -334,6 +334,7 @@ liesa.save!
 ann.save!
 fien.save!
 louis.save!
+steven.save!
 
 puts "users saved"
 
@@ -354,7 +355,7 @@ child1 = Child.create(
 child2 = Child.create(
     name: "Jan",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-    age: 6,
+    age: 7,
     user: fien
 )
 
@@ -414,6 +415,13 @@ child10 = Child.create(
     user: tom
 )
 
+lucas = Child.create(
+    name: "Lucas",
+    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    age: 6,
+    user: steven
+)
+
 child1.conditions << [developmental, speach]
 child2.conditions << [auditory, speach]
 child3.conditions << [developmental, oppositional]
@@ -424,10 +432,11 @@ child7.conditions << [downsyndrome]
 child8.conditions << [twice]
 child9.conditions << [developmental, speach]
 child10.conditions << [neuro, oppositional]
+lucas.conditions << [developmental, speach]
 
 
 child1.interests << [reading, gaming]
-child2.interests << [sport, movies, singing]
+child2.interests << [sport, movies, gaming]
 child3.interests << [acting, sport]
 child4.interests << [dancing, animals, sport, drawing]
 child5.interests << [singing, acting, music, drawing]
@@ -436,87 +445,68 @@ child7.interests << [movies, music, gaming]
 child8.interests << [singing, animals]
 child9.interests << [animals, drawing]
 child10.interests << [animals, music, singing]
+lucas.interests << [animals, sport, gaming]
+
 
 child1.save!
+child2.save!
+child3.save!
+child4.save!
+child5.save!
+child6.save!
+child7.save!
+child8.save!
+child9.save!
+child10.save!
+lucas.save!
 
-puts "child saved"
+puts "children saved"
 
-puts "connecting children interests"
-
-
-
-playdate_pending_1 = Playdate.create(
-      location: "Park de Forest",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: nil,
-      date: DateTime.strptime("31/08/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
-      receiver: fien
-)
-
+puts "connected children interests"
 
 
-playdate_pending_2 = Playdate.create(
-      location: "Hallerbos",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: nil,
-      date: DateTime.strptime("30/08/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
-      receiver: louis
-)
-playdate_pending_3 = Playdate.create(
-      location: "Saint Chatherine, Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: nil,
-      date: DateTime.strptime("1/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
-      receiver: tom
-)
+puts "creating convos"
 
 
-playdate_pending_1.save!
-playdate_pending_2.save!
-playdate_pending_3.save!
+conversation_1 = Conversation.create()
+conversation_2 = Conversation.create()
+conversation_3 = Conversation.create()
+conversation_4 = Conversation.create()
+
+
+conversation_1.users << [liesa, steven]
+conversation_2.users << [steven, patricia]
+conversation_3.users << [tomas, steven]
+conversation_4.users << [john, steven]
+
+conversation_1.save!
+conversation_2.save!
+conversation_3.save!
+conversation_4.save!
+
+
+puts 'convos saved'
+puts 'creating playdates'
 
 playdate_upcoming_1 = Playdate.create(
-      location: "Parvis",
+      location: "Parc",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
       status: true,
-      date: DateTime.strptime("2/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      date: DateTime.strptime("2/09/2019 12:00", "%d/%m/%Y %H:%M"),
       inviter: liesa,
-      receiver: lino
-)
-
-
-playdate_upcoming_2 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: true,
-      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
-      receiver: john
-)
-
-playdate_upcoming_3 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: true,
-      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
-      receiver: sarah
+      receiver: steven
 )
 
 
 playdate_upcoming_1.save!
-playdate_upcoming_2.save!
-playdate_upcoming_3.save!
+
 
 playdate_past_1 = Playdate.create(
       location: "Brussels",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
       status: true,
-      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: lino,
+      date: DateTime.strptime("3/06/2019 12:00", "%d/%m/%Y %H:%M"),
+      inviter: steven,
       receiver: patricia
 )
 
@@ -524,9 +514,9 @@ playdate_past_2 = Playdate.create(
       location: "Brussels",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
       status: true,
-      date: DateTime.strptime("3/09/2019 8:00", "%d/%m/%Y %H:%M"),
+      date: DateTime.strptime("10/07/2019 16:00", "%d/%m/%Y %H:%M"),
       inviter: tomas,
-      receiver: lino
+      receiver: steven
 )
 
 
@@ -535,33 +525,18 @@ playdate_past_2.save!
 
 
 playdate_toaccept_1 = Playdate.create(
-      location: "Brussels",
+      location: "Playground Saint Catherine",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
       status: nil,
-      date: DateTime.strptime("6/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: fien,
-      receiver: lino
+      date: DateTime.strptime("6/09/2019 14:00", "%d/%m/%Y %H:%M"),
+      inviter: john,
+      receiver: steven
 )
 
 
-playdate_toaccept_2 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: nil,
-      date: DateTime.strptime("4/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: pieter,
-      receiver: lino
-)
 
-playdate_toaccept_3 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
-      status: nil,
-      date: DateTime.strptime("5/09/2019 8:00", "%d/%m/%Y %H:%M"),
-      inviter: tomas,
-      receiver: lino
-)
 
 playdate_toaccept_1.save!
-playdate_toaccept_2.save!
-playdate_toaccept_3.save!
+
+
+puts "playdates saved"

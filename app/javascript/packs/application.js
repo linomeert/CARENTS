@@ -1,4 +1,5 @@
 import "bootstrap";
+import Typed from "typed.js"
 import { changeContentTabs } from './tabs';
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
@@ -26,3 +27,8 @@ if(interests){
   })
   })
 }
+
+var typed = new Typed('#typed', {
+  stringsElement: '#typed-strings',
+  typeSpeed: 45
+});

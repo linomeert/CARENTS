@@ -3,7 +3,7 @@
 
 <div class="sidenav">
     <% if @conversations.empty? %>
-      <p>No conversations yet!</p>
+      <p style="margin-top:38px;">No conversations yet!</p>
     <% else %>
       <ul>
         <% @conversations.each do |conversation| %>
@@ -26,12 +26,14 @@
       </ul>
     <% end %>
 </div>
-
+<% if @conversation %>
 <div id="chat-profile" class="chatclosed">
   <div class="chatprofnav">
     <a id="openclose" href="#"></a>
   </div>
-  <% convo_user = @conversation.users.reject {|user| user == current_user}.first %>
+
+    <% convo_user = @conversation.users.reject {|user| user == current_user}.first %>
+
   <%= link_to user_path(id: convo_user.id), class: "userlink" do %>
     <div class="usercards">
       <div class="card-image" style="background-image:url(<%= convo_user.photo %>)">
@@ -64,6 +66,7 @@
   <% end %>
 
 </div>
+<% end %>
 
 <div id="contentchat" class="main chat chatcontentclosed">
   <div class="chatbox">

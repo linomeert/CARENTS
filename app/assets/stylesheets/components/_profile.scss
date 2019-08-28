@@ -40,6 +40,7 @@ h1 span {
 
 .interestlist li {
   padding:15px 15px 0px 15px;
+  margin-right: 20px;
 }
 .common {
     border: 2px solid #20d02a;
@@ -67,7 +68,8 @@ h1 span {
 
 ul.interestlist {
   display:flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 0px;
 
   li {
     list-style-type: none;

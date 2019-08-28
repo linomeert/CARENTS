@@ -32,11 +32,11 @@
 
                 <% if reviews_by_me.empty? %>
                   <% if current_user == inviter %>
-                    <%= link_to new_user_playdate_review_path(user_id: receiver.id, playdate_id: playdate.id), class: "reviewlink" do %>
+                    <%= link_to new_user_playdate_review_path(user_id: receiver.id, playdate_id: playdate.id), class: "btn btn-primary" do %>
                       Write in guestbook
                     <% end %>
                   <% else %>
-                    <%= link_to new_user_playdate_review_path(user_id: inviter.id, playdate_id: playdate.id), class: "reviewlink" do %>
+                    <%= link_to new_user_playdate_review_path(user_id: inviter.id, playdate_id: playdate.id), class: "btn btn-primary" do %>
                       Write in guestbook
                     <% end %>
                   <% end %>

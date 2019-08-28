@@ -45,17 +45,26 @@ form#new_message {
 
 .convo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+
+    .chatbulb {
+      background:#8cd923;
+    }
 }
 
 .convo.message-received {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 .convo.message-received .chatblub {
-    background: #8cd923 !important;
-    color:white;
+    background: white;
+    color: inherit;
+}
+
+.convo.message-sent .chatblub {
+  background: #91d921 !important;
+  color: white;
 }
 
 

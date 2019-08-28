@@ -50,6 +50,8 @@ img.img {
     height: 100%;
     object-fit: cover;
     background-position: center;
+    border: 5px solid white;
+    box-shadow: 1px 1px 4px;
 }
 
 .homepage .row {
@@ -101,18 +103,25 @@ background-color: gray;
   top: 37%;
   bottom: 0;
     z-index: 6;
-    left: 0;
+    left: 320px;
     right: 0;
-    width: 45%;
+    width: 80%;
     height: 100px;
     margin: 0 auto;
     text-align: left;
     h1 {
     color: white;
     font-size: 54pt;
+
     }
     h3 {
     color: white;
     font-size: 26pt;
     }
+}
+span#typed {
+   color: white;
+    font-size: 30pt;
+
+
 }

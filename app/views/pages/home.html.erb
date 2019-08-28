@@ -1,9 +1,18 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
     <div class="banner-content">
       <h1>Carents</h1>
-      <h3>Everyone deserves friendship</h3>
+  <div id="typed-strings">
+      <h3>Meet Carents </h3>
+      <h3>Form Friendships </h3>
+      <h3>Organise Playdates </h3>
+      <h3>Because everyone deserves friendship</h3>
+
+
+  </div>
+  <span id="typed"></span>
+
         <% if current_user == @user %>
-        <%= link_to "Join us", user_session_path, class: "btn btn-flat" %>
+        <br><br><%= link_to "Join us", user_session_path, class: "btn btn-flat" %>
       <% end %>
     </div>
 

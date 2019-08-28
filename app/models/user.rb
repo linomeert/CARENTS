@@ -8,7 +8,7 @@ class User < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   has_many :children, dependent: :destroy
-  has_many :messages
+  has_many :messages, foreign_key: "sender_id", dependent: :destroy
   #has_many :reviews, dependent: :destroy
   has_and_belongs_to_many :conversations
   #has_many :playdates, dependent: :destroy

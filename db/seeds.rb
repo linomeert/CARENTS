@@ -10,11 +10,13 @@
 puts "creating interests"
 Message.destroy_all
 Conversation.destroy_all
-Playdate.destroy_all
 Interest.destroy_all
+Review.destroy_all
+Playdate.destroy_all
 User.destroy_all
 Condition.destroy_all
 Child.destroy_all
+
 
 
 
@@ -295,7 +297,7 @@ fien = User.create(
     username: "Fienbeckers",
     address: "Saint-Gilles",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/pfza4igjvwjplwu6lbqw.jpg",
-    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    biography: "Hi Peeps! My name is Fien and my husband and I have a little girl called Jana. Together we enjoy taking trips to the coastside, because Jana really likes water and loves to swim. I suppose she got that from me, because I used to be an olympic swimmer!  ",
 
 )
 
@@ -319,7 +321,7 @@ steven = User.create(
     username: "stevenwillems",
     address: "Saint-Gilles",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566979671/samples/people/users/q0ne9m2zl2dy6xit5uuu.png",
-    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    biography: "Hey there! We're the Willems family. My wife, Johanna and me have a lovely son called Lucas. We love our family time. Whenever we have the time and the weather is nice, we go to the park or to the zoo. Lucas really enjoys the animals!",
 
 )
 
@@ -353,8 +355,8 @@ child1 = Child.create(
 
 
 child2 = Child.create(
-    name: "Jan",
-    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    name: "Jana",
+    biography: "Jana is 7, and she is the sweetest girl. She loves to go to the park, and loves to see the animals in the zoo. Jana also likes to play with other kids, which is not always easy because she has a hearing problem and has some difficulties communicating. Other kids tend to be very loud and expressive, which is not always ideal. We're hoping to find some friends for her on here!",
     age: 7,
     user: fien
 )
@@ -417,7 +419,7 @@ child10 = Child.create(
 
 lucas = Child.create(
     name: "Lucas",
-    biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+    biography: "Lucas is 6 year old. He is already very creative, and can spend hours drawing. He loves our family dog, toby, and even considers him to be his best friend. Even though he has difficulties speaking, he can be very expressive though his expressions. He enjoys playing football in the garden with his father, but he sometimes wishes he could play with kids his own age. ",
     age: 6,
     user: steven
 )
@@ -472,25 +474,28 @@ conversation_1 = Conversation.create()
 conversation_2 = Conversation.create()
 conversation_3 = Conversation.create()
 conversation_4 = Conversation.create()
+conversation_5 = Conversation.create()
 
 
 conversation_1.users << [liesa, steven]
 conversation_2.users << [steven, patricia]
 conversation_3.users << [tomas, steven]
 conversation_4.users << [john, steven]
+conversation_5.users << [fien, liesa]
 
 conversation_1.save!
 conversation_2.save!
 conversation_3.save!
 conversation_4.save!
+conversation_5.save!
 
 
 puts 'convos saved'
 puts 'creating playdates'
 
 playdate_upcoming_1 = Playdate.create(
-      location: "Parc",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      location: "Zoo Antwerp",
+      description: "Hey, I see lucas likes animals, so does Jean! Would you be interested in joining us to the zoo? We can pick you up!",
       status: true,
       date: DateTime.strptime("2/09/2019 12:00", "%d/%m/%Y %H:%M"),
       inviter: liesa,
@@ -502,8 +507,8 @@ playdate_upcoming_1.save!
 
 
 playdate_past_1 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      location: "Jürgen Bergman Playground Saint-Gilles",
+      description: "Hey there! There's this new playground in the area, want to check it out?",
       status: true,
       date: DateTime.strptime("3/06/2019 12:00", "%d/%m/%Y %H:%M"),
       inviter: steven,
@@ -511,8 +516,8 @@ playdate_past_1 = Playdate.create(
 )
 
 playdate_past_2 = Playdate.create(
-      location: "Brussels",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      location: "Oude graanmarkt playground",
+      description: "Hey Steven, fancy going to the playground? We can grab a pizza at Nona after, that pizza place I told you about!",
       status: true,
       date: DateTime.strptime("10/07/2019 16:00", "%d/%m/%Y %H:%M"),
       inviter: tomas,
@@ -520,13 +525,24 @@ playdate_past_2 = Playdate.create(
 )
 
 
+playdate_past_3 = Playdate.create(
+      location: "Park Brussels Center",
+      description: "Hey, fancy a playdate in the park?",
+      status: true,
+      date: DateTime.strptime("10/06/2019 16:00", "%d/%m/%Y %H:%M"),
+      inviter: liesa,
+      receiver: fien
+)
+
+
 playdate_past_1.save!
 playdate_past_2.save!
+playdate_past_3.save!
 
 
 playdate_toaccept_1 = Playdate.create(
       location: "Playground Saint Catherine",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation",
+      description: "Hey, great app right? Anyways, is your fam down for a picknick in the park? ",
       status: nil,
       date: DateTime.strptime("6/09/2019 14:00", "%d/%m/%Y %H:%M"),
       inviter: john,
@@ -540,3 +556,23 @@ playdate_toaccept_1.save!
 
 
 puts "playdates saved"
+
+review1 = Review.create(
+      title: "We had SUCH a great time",
+      description: "Liesa and Ben are such great parents, and Jean is such a fun kid. Our children got along very well. Let's do this again soon? Thanks for the great time! ",
+      recommend: true,
+      playdate: playdate_past_3,
+      user: liesa,
+)
+
+review2 = Review.create(
+      title: "Lovely, just lovely",
+      description: "OMG this family is amazing. We spend hours talking while our children were having the time of their life. All of us got a drink together in the end, and we'll meet up again very soon. THANKS PEEPS! ",
+      recommend: true,
+      playdate: playdate_past_3,
+      user: fien,
+)
+
+
+review1.save!
+review2.save!

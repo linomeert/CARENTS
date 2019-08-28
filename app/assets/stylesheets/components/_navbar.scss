@@ -8,6 +8,20 @@ h2.logo {
     margin: 0px;
 }
 
+a.nav-link {
+  transition: .3s;
+}
+
+a.nav-link.active {
+  color: #84ca19 !important;
+}
+
+a.nav-link:hover {
+  color: #84ca19!important;
+}
+
+
+
 .navbar-lewagon {
 
 

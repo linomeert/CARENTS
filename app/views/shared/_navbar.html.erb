@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <% if current_page?(root_path) %> transparant <% end %>">
 
   <%= link_to root_path, class: "navbar-brand" do %>
@@ -12,12 +11,14 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "Families", parents_path(current_user) , class: "nav-link" %>
+          <%= active_link_to parents_path(current_user), active: :exclusive, class: "nav-link" do %>
+          Families
+          <% end %>
         </li>
         <li class="nav-item messages">
           <% playdates_requests = Playdate.where(receiver_id: current_user.id, status: nil) %>
 
-          <%= link_to dashboard_upcoming_playdates_path,  class: "nav-link" do %>
+          <%= active_link_to dashboard_upcoming_playdates_path, active: :exclusive, class: "nav-link" do %>
           Dashboard
             <% if not playdates_requests.empty? %>
               <span class="notification"><%= playdates_requests.count %></span>
@@ -37,7 +38,7 @@
 
 
 
-          <%= link_to conversations_path(current_user) , class: "nav-link" do %>
+          <%= active_link_to conversations_path(current_user), active: :exclusive, class: "nav-link" do %>
             Messages
             <% if not unread_user_messages.empty? %>
               <span class="notification"><%= unread_user_messages.count %></span>

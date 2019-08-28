@@ -65,14 +65,17 @@
 
                       <% my_kid_interests = [] %>
                       <% current_user.children.each do |child| %>
-                      <% my_kid_interests << child.interests %>
+                        <% my_kid_interests << child.interests %>
                       <% end %>
 
 
                       <% child.interests.each do |interest| %>
-
-                        <% if my_kid_interests.flatten.include? interest %>
-                          <li class="common">
+                        <% if @user != current_user %>
+                          <% if my_kid_interests.flatten.include? interest %>
+                            <li class="common">
+                          <% else %>
+                            <li>
+                          <% end %>
                         <% else %>
                           <li>
                         <% end %>

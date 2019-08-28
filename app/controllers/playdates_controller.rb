@@ -16,7 +16,7 @@ class PlaydatesController < ApplicationController
   end
 
   def past_playdates
-    @playdates_past = Playdate.all.where("date < ? AND inviter_id = ? OR receiver_id = ? AND status IS ?", DateTime.now, current_user.id, current_user.id, true)
+    @playdates_past = Playdate.all.where("date < ? AND (inviter_id = ? OR receiver_id = ?) AND status IS ?", DateTime.now, current_user.id, current_user.id, true)
   end
 
   def accept_playdate
@@ -75,8 +75,8 @@ class PlaydatesController < ApplicationController
 
   def set_playdate_requests_upcoming
     @playdates_requests = Playdate.where(receiver_id: current_user.id, status: nil)
-    @playdates_upcoming = Playdate.all.where(status: true).where("date > ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, current_user, current_user)
-    @playdates_rejected = Playdate.all.where(status: false).where("date > ? AND inviter_id = ? OR receiver_id = ?", DateTime.now, current_user, current_user)
+    @playdates_upcoming = Playdate.all.where(status: true).where("date > ? AND (inviter_id = ? OR receiver_id = ?)", DateTime.now, current_user, current_user)
+    @playdates_rejected = Playdate.all.where(status: false).where("date > ? AND (inviter_id = ? OR receiver_id = ?)", DateTime.now, current_user, current_user)
 
   end
 

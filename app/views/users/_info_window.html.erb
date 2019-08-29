@@ -1,2 +1,4 @@
+<%= link_to user_path(id: user.id) do %>
 <h4><%= user.display_name %> Family </h4>
 <p><%= cl_image_tag user.photo %></p>
+<% end %>

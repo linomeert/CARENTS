@@ -38,12 +38,15 @@
                   <i class="far fa-calendar-alt"></i> <%= playdate.date.to_formatted_s(:short) %>
                 </div>
                 <div class="options">
+
                   <% common_covo = (receiver.conversations & inviter.conversations).first %>
-                  <%= link_to conversations_path(conversation_id: common_covo.id), class: "chatlink" do %>
-                      <i class="fas fa-comments"></i>
-                  <% end %>
-                  <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
-                     <i class="fas fa-trash-alt"></i>
+                  <% if common_covo %>
+                    <%= link_to conversations_path(conversation_id: common_covo.id), class: "chatlink" do %>
+                        <i class="fas fa-comments"></i>
+                    <% end %>
+                    <%= link_to user_playdate_path(current_user, playdate), method: :delete, data: { confirm: "Are you sure?" }  do %>
+                       <i class="fas fa-trash-alt"></i>
+                    <% end %>
                   <% end %>
 
                 </div>

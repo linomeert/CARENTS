@@ -23,3 +23,13 @@ if (toggleBtn) {
     window.scrollTo(0,document.querySelector("ul.chat").scrollHeight);
   });
 }
+
+
+const chatter = document.getElementById("new_message");
+
+if (chatter) {
+  chatter.addEventListener("submit", (event) => {
+    console.log("yo bro")
+  });
+
+}

@@ -15,3 +15,15 @@
 .toggle h1 {
       line-height: 58px;
   }
+
+  @media(max-width: 575px) {
+    .toggle {
+
+      h1 {
+      font-size:25px;
+      line-height:45px;
+      }
+
+
+    }
+  }

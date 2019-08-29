@@ -125,3 +125,44 @@ span#typed {
 
 
 }
+
+@media(max-width: 1000px) {
+  .photobooth.show {
+    display:none;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    z-index: 6;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+
+  }
+  .carousel.slide {
+    height:auto;
+  }
+
+  img.iconimg {
+      max-width: 140px;
+  }
+
+
+}
+
+@media(max-width: 650px) {
+  .banner-content {
+
+    h1 {
+    font-size:34pt
+    }
+
+    span#typed {
+      font-size:17px;
+    }
+  }
+}

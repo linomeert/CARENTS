@@ -19,6 +19,11 @@
                 <% if not unread_messages.empty? %>
                 <div class="notification"><%= unread_messages.count %></div>
                 <% end %>
+                <div class="destroyit">
+                    <%= link_to user_conversation_path(current_user, conversation), method: :delete, data: { confirm: "Are you sure you want to delete this conversation? You will delete the messages as well!" }  do %>
+                       <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                </div>
               <% end %>
 
           </li>

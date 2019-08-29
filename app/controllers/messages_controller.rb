@@ -12,6 +12,8 @@ class MessagesController < ApplicationController
 
 
     if message.save
+      conversation.updated_at = DateTime.now
+      conversation.save
       MessagesChannel.broadcast_to(
         "conversation_#{conversation.id}",
         message: message.content,

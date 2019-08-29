@@ -1,6 +1,6 @@
 
 
-<%= form_for message, url: conversation_messages_path(conversation), remote: true, authenticity_token: true do |f| %>
+<%= form_for message, url: conversation_messages_path(conversation), id: "chatter", remote: true, authenticity_token: true do |f| %>
   <%= f.text_field :content, :as => :string, class: "form-control", id: "chatfield", data: {textfield: "message"} %>
 
   <%= f.hidden_field :conversation_id, value: conversation.id %>

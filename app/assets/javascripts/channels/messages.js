@@ -19,9 +19,8 @@ if( conversationContainer) {
     renderMessage: function(data) {
       window.scrollTo(0,document.querySelector("ul.chat").scrollHeight);
 
+      document.getElementById("new_message").reset();
 
-      console.log(currentUser)
-      console.log(data.user)
 
       if (currentUser === data.user) {
         return "<div class='convo message-sent'> <div> <div class='chatblub'>" + data.message + "</div> " + "<span class='username'>" + "just now" + "</span> </div> </div>";

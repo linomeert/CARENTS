@@ -14,7 +14,6 @@ if (togglePopupBtn) {
 
   closePopup.addEventListener("click", (event) => {
     document.getElementById("blackout").classList.remove("show-popup");
-    console.log("hello man")
   });
 
 }

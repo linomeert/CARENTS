@@ -1,5 +1,10 @@
-  <%= active_link_to "My Upcoming playdates", dashboard_upcoming_playdates_path, active: :exclusive, class: "dashboard-nav" %>
+  <%= active_link_to dashboard_upcoming_playdates_path, active: :exclusive, class: "dashboard-nav" do %>
+    <%= image_tag "calendar.png", :class => "mob-ico" %>
+    <span>Upcoming Playdates</span>
+  <% end %>
   <%= active_link_to dashboard_playdate_requests_path, class: "dashboard-nav"  do %>
+    <%= image_tag "invitation.png", :class => "mob-ico" %>
+
     <span>Playdate Requests</span>
     <% if  @playdates_requests  %>
       <% if not @playdates_requests.empty?  %>
@@ -8,5 +13,11 @@
     <% end %>
   <% end %>
 
-  <%= active_link_to "My Pending Playdates", dashboard_pending_playdates_path, active: :exclusive, class: "dashboard-nav" %>
-  <%= active_link_to "My Past Playdates", dashboard_past_playdates_path, active: :exclusive, class: "dashboard-nav" %>
+  <%= active_link_to dashboard_pending_playdates_path, active: :exclusive, class: "dashboard-nav" do %>
+    <%= image_tag "email.png", :class => "mob-ico" %>
+    <span>Pending Playdates</span>
+  <% end %>
+  <%= active_link_to dashboard_past_playdates_path, active: :exclusive, class: "dashboard-nav" do %>
+    <%= image_tag "past.png", :class => "mob-ico" %>
+    <span>Past Playdates</span>
+  <% end %>

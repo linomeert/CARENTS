@@ -138,6 +138,12 @@ a.acceptplaydate:hover, a.rejectplaydate:hover {
 
 }
 
+.mob-ico {
+  display:none;
+  width: 76%;
+  margin: 0 auto;
+}
+
 @media(max-width: 992px) {
   .playdategrid {
     grid-template-columns: 1fr 1fr;
@@ -150,7 +156,46 @@ a.acceptplaydate:hover, a.rejectplaydate:hover {
   }
 }
 
+
+@media(max-width: 900px) {
+
+  .main.dash {
+    margin-left: 80px;
+
+    .container {
+      padding: 40px;
+      width: auto;
+    }
+  }
+  .mob-ico {
+    display:inline-block !important;
+  }
+  .dashboard-nav span {
+    display:none;
+  }
+
+  .sidenav.dashboard {
+      width: 80px;
+
+      .dashboard-nav {
+        position:relative;
+
+        .notification {
+          position:absolute;
+          left:0;
+          right: 0;
+          top:11px;
+          bottom:0;
+          margin: 0 auto;
+        }
+      }
+  }
+}
+
 a.dashboard-nav.active {
     background: #242424;
     color: white;
 }
+
+
+

@@ -3,7 +3,8 @@ class ConversationsController < ApplicationController
   def index
     @conversations = current_user.conversations.eager_load(:users).order('conversations.updated_at DESC')
     @conversation = params[:conversation_id].nil? ? @conversations.first : Conversation.find(params[:conversation_id])
-    @messages = Message.eager_load(:sender).where(conversation: @conversation)
+    @messages = Message.eager_load(:sender).where(conversation: @conversation).order('messages.created_at ASC')
+
   end
 
   def show
@@ -37,6 +38,13 @@ class ConversationsController < ApplicationController
     @conversation.users << current_user
     @conversation.users << User.find(params[:user_id])
     @conversation.save
+    redirect_to conversations_path
+  end
+
+  def destroy
+    @conversation = Conversation.find(params[:slug])
+    @conversation.messages.destroy_all
+    @conversation.destroy
     redirect_to conversations_path
   end
 end

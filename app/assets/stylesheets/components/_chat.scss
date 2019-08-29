@@ -224,3 +224,128 @@ margin-top: -6px;
     margin-left: 10px;
 }
 
+
+
+.destroyit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    border: 0px !important;
+
+
+    a {
+        border: 0px;
+        padding: 0px;
+        font-size: 14px;
+        transition: .3s;
+        opacity: .2;
+    }
+    a:hover {
+      opacity: 1;
+    }
+}
+
+.btn.playdate_invite {
+    background: #20d029;
+    border: 1px solid #20d029;
+}
+
+@media(max-width: 824px) {
+
+  .destroyit  {
+    display:none;
+  }
+
+  .chatblub {
+      word-break: break-all;
+  }
+
+  .sidenav {
+      height: 100%;
+      width: 124px;
+      a.chatlink p {
+          display: none;
+      }
+  }
+
+  .chatclosed {
+      left: 120px;
+  }
+
+  .chatopen {
+      width: 100%;
+      left: 124px;
+  }
+
+  .chatcontentclosed {
+      margin-left: 180px !important;
+  }
+
+  .chatcontentclosed .form {
+      left: 180px !important;
+  }
+
+  #contentchat .form {
+
+      display: inherit;
+  }
+  .linkplay .btn.btn-primary {
+    background: #4AB5FF;
+    border: 1px solid #4AB5FF;
+    margin-top: 12px;
+    float: right;
+  }
+
+  .chat-profile {
+    padding:140px 140px 50px 30px;
+  }
+}
+
+@media(max-width: 590px) {
+  .chatlink .avatar-large {
+    width:50px;
+    height:50px;
+  }
+
+  .sidenav {
+      width: 76px;
+  }
+  #chat-profile {
+    padding:140px 21px 30px 30px;
+  }
+  .chatclosed {
+      left: 76px;
+      .chatprofnav {
+
+          left: 9px;
+      }
+  }
+
+  .chatcontentclosed {
+      margin-left: 77px !important;
+      .form {
+      left: 78px !important;
+      }
+  }
+
+  .chatbox .container {
+      padding: 25px;
+  }
+
+  #contentchat .form {
+      left: 650px;
+      padding: 10px;
+  }
+
+  .chatprofilebox .chatlink {
+    padding:12px 10px;
+  }
+
+  .chatopen {
+      left: 74px;
+      width: 250px;
+  }
+  #chat-profile {
+    display: none;
+  }
+}

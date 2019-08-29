@@ -67,9 +67,9 @@ h1 span {
 }
 
 ul.interestlist {
-  display:flex;
-  justify-content: flex-start;
-  padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0px;
 
   li {
     list-style-type: none;
@@ -183,3 +183,23 @@ ul.interestlist {
 .ctnt {
   padding-top:40px;
 }
+
+@media(max-width: 767px) {
+  .profile-detail h1 {
+    color:#232323;
+  }
+}
+
+@media(max-width: 650px) {
+
+  .nav-tabs li {
+    margin: 10px;
+  }
+
+  ul.interestlist {
+
+      grid-template-columns: 1fr 1fr;
+
+  }
+}
+

@@ -4,5 +4,5 @@
   <%= f.text_field :content, :as => :string, class: "form-control", id: "chatfield", data: {textfield: "message"} %>
 
   <%= f.hidden_field :conversation_id, value: conversation.id %>
-  <%= f.submit "send", id:"chatbtn", class: "btn btn-secondary", style: "display", data: {send: "message"} %>
+  <%= f.submit "Send", id:"chatbtn", class: "btn btn-secondary", style: "display", data: {send: "message"} %>
 <% end %>

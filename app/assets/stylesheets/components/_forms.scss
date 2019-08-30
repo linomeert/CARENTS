@@ -1,7 +1,8 @@
   .subscr-blok {
-    width: 550px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
+    width:90%;
   }
 .assoc-columns {
   grid-template-columns: 1fr 1fr;

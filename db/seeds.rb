@@ -235,7 +235,7 @@ patricia = User.create(
     password:"password123",
     username: "Patriciamaes",
     address: "Anderlecht",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/liowss7bgoltmxys1gxz.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/v1567157447/samples/people/users/mb1jvcnfuavvjprxqd3m.png",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 
@@ -297,7 +297,7 @@ fien = User.create(
     username: "Fienbeckers",
     address: "Saint-Gilles",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297378/samples/people/users/pfza4igjvwjplwu6lbqw.jpg",
-    biography: "Hi Peeps! My name is Fien and my husband and I have a little girl called Jana. Together we enjoy taking trips to the coastside, because Jana really likes water and loves to swim. I suppose she got that from me, because I used to be an olympic swimmer!  ",
+    biography: "Hi Peeps! My name is Fien and my husband and I have a little girl called Jana. Together we enjoy taking trips to the coastside, because Jana really likes water and loves to swim. I suppose she got that from me, because I used to be an olympic swimmer!",
 
 )
 
@@ -321,8 +321,7 @@ steven = User.create(
     username: "stevenwillems",
     address: "Saint-Gilles",
     remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566979671/samples/people/users/q0ne9m2zl2dy6xit5uuu.png",
-    biography: "Hey there! We're the Willems family. My wife, Johanna and me have a lovely son called Lucas. We love our family time. Whenever we have the time and the weather is nice, we go to the park or to the zoo. Lucas really enjoys the animals!",
-
+    biography: "Hey there! We're the Willems family. My wife, Johanna and me have a lovely son called Lucas. We love our family time. Whenever we have the time and the weather is nice, we go to the park or to the zoo. Lucas really enjoys the animals!"
 )
 
 

@@ -491,17 +491,8 @@ conversation_5.save!
 puts 'convos saved'
 puts 'creating playdates'
 
-playdate_upcoming_1 = Playdate.create(
-      location: "Zoo Antwerp",
-      description: "Hey, I see lucas likes animals, so does Jean! Would you be interested in joining us to the zoo? We can pick you up!",
-      status: true,
-      date: DateTime.strptime("2/09/2019 12:00", "%d/%m/%Y %H:%M"),
-      inviter: liesa,
-      receiver: steven
-)
 
 
-playdate_upcoming_1.save!
 
 
 playdate_past_1 = Playdate.create(

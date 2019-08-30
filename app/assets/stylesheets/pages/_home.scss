@@ -126,6 +126,15 @@ span#typed {
 }
 
 
+@media(max-width: 1290px) {
+
+  .carousel {
+      position: relative;
+      height: auto;
+
+  }
+}
+
 @media(max-width: 1000px) {
   .photobooth.show {
     display:none;

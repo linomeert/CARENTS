@@ -210,7 +210,7 @@ john = User.create(
     password:"password123",
     username: "johnpeeters",
     address: "Brussels",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297376/samples/people/users/jrqc3m3ywbmmfth2w5bi.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1567162841/samples/people/users/sy0uinp25hejiubk84nq.jpg",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
 
 
@@ -272,9 +272,8 @@ liesa = User.create(
     password:"password123",
     username: "liesa.dupont",
     address: " Dilbeek",
-    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1566297379/samples/people/users/f10tc8tsltwjeienrah0.jpg",
+    remote_photo_url: "https://res.cloudinary.com/linomeert/image/upload/w_1000,c_scale/v1567162841/samples/people/users/hq4vyuwbi0sulucdg55j.png",
     biography: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-
 )
 
 ann = User.create(
@@ -426,12 +425,12 @@ lucas = Child.create(
 child1.conditions << [developmental, speach]
 child2.conditions << [auditory, speach]
 child3.conditions << [developmental, oppositional]
-child4.conditions << [dyslexia]
+child4.conditions << [downsyndrome]
 child5.conditions << [twice]
 child6.conditions << [adhd, dyslexia]
-child7.conditions << [downsyndrome]
+child7.conditions << [dyslexia]
 child8.conditions << [twice]
-child9.conditions << [developmental, speach]
+child9.conditions << [developmental, sensory]
 child10.conditions << [neuro, oppositional]
 lucas.conditions << [developmental, speach]
 
@@ -439,7 +438,7 @@ lucas.conditions << [developmental, speach]
 child1.interests << [reading, gaming]
 child2.interests << [sport, movies, gaming]
 child3.interests << [acting, sport]
-child4.interests << [dancing, animals, sport, drawing]
+child4.interests << [dancing, animals, drawing]
 child5.interests << [singing, acting, music, drawing]
 child6.interests << [dancing, singing]
 child7.interests << [movies, music, gaming]

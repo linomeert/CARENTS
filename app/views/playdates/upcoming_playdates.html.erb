@@ -20,7 +20,13 @@
                   <div class="avatar-large" style="background:url('<%= inviter.photo %>')"></div>
                   <div class="avatar-large mg" style="background:url('<%= receiver.photo %>')"></div>
                 </div>
-                <h4>Families <%=  inviter.last_name %> & <%= receiver.last_name %></h4>
+                <h4>Playdate with
+                  <% if inviter == current_user %>
+                    <%= receiver.last_name %> family
+                  <% else %>
+                    <%=  inviter.last_name %> family
+                  <% end %>
+                </h4>
                 <p><%= playdate.description %></p>
 
               </div>
